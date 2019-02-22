@@ -3,7 +3,7 @@ import math
 n = float(input())
 
 notas = [100.00, 50.00, 20.00, 10.00, 5.00, 2.00]
-moedas = [1, 0.5, 0.25, 0.10, 0.05, 0.01]
+moedas = [100, 50, 25, 10, 5, 1]
 numero_notas = [0, 0, 0, 0, 0, 0]
 numero_moedas = [0.0, 0.0, 0.0, 0.0, 0.0 ,0.0]
 
@@ -17,19 +17,20 @@ def bills(n):
     return(n)
 
 def coins(n):
-    i = 0
+    n = round(n, 2);
+    n *= 100
+
     for i in range(0, 6):
         if n >= moedas[i]:
-            numero_moedas[i] = float(round(n / moedas[i]))
+            numero_moedas[i] = n // moedas[i]
             n -= numero_moedas[i] * moedas[i]
-            print(numero_moedas[i])
         i += 1
 coins(bills(n))
 
-print("NOTAS:\n")
+print("NOTAS:")
 for i in range(0, 6):
-    print("{} nota(s) de R$ {}\n".format(int(numero_notas[i]), notas[i]))
+    print("{0} nota(s) de R$ {1:.2f}".format(int(numero_notas[i]), notas[i]))
 
-print("MOEDAS:\n")
+print("MOEDAS:")
 for i in range(0, 6):
-    print("{} moeda(s) de R$ {}\n".format(int(numero_moedas[i]), moedas[i]))
+    print("{0} moeda(s) de R$ {1:.2f}".format(int(numero_moedas[i]), (moedas[i] / 100)))
