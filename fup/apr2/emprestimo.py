@@ -1,14 +1,26 @@
 initValue = float(input("Digite o valor que deseja pegar emprestado: "))
-juros1, juros2, juros3, juros4, juros5 = 0.02, 0.1, 0.15, 0.20, 0.25
-parc1, parc2, parc3, parc4, parc5 = 1, 3, 6, 9, 12
-vj1, vj2, vj3, vj4, vj5 = (initValue * juros1), (initValue * juros2), (initValue * juros3), (initValue * juros4), (initValue * juros5)
-tp1, tp2, tp3, tp4, tp5 =  (initValue + vj1), (initValue + vj2), (initValue + vj3), (initValue + vj4), (initValue + vj5)
-vp1, vp2, vp3, vp4, vp5 = (tp1 / parc1), (tp2 / parc2), (tp3 / parc3), (tp4 / parc4), (tp5 / parc5)
+juros_1 = 0.02  # inicializa os primeiros valores, já que são diferentes do resto
+parc_1 = 1  # idem ^ 
+parc_x = 3  # início da P.A que representa todos os valores a partir do segundo
+juros_x = 0.10  # idem ^
 
-print("    TOTAL A PAGAR || VALOR DOS JUROS || QTD DE PARCELAS || VALOR DA PARCELA")
-print("    {0:.2f}               {1:.2f}                  {2}                  {3:.2f}".format(tp1, vj1, parc1, vp1))
-for i in range(3, 13, 3):
-    print("{0:.2f}               {1:.2f}                  {2}                  {3:.2f}".format(tp2, vj2, parc2, vp2))
-# print("{0:.2f}               {1:.2f}                  {2}                  {3:.2f}".format(tp3, vj3, parc3, vp3))
-# print("{0:.2f}               {1:.2f}                  {2}                  {3:.2f}".format(tp4, vj4, parc4, vp4))
-# print("{0:.2f}               {1:.2f}                  {2}                  {3:.2f}".format(tp5, vj5, parc5, vp5))
+vj_1 = (initValue * juros_1)  
+tp_1 =  (initValue + vj_1)
+vp_1 = (tp_1 / parc_1)
+
+
+vj_x = (initValue * juros_x)  
+tp_x =  (initValue + vj_x)
+vp_x = (tp_x / parc_x)
+
+
+print("TOTAL A PAGAR || VALOR DOS JUROS || QTD DE PARCELAS || VALOR DA PARCELA")
+print("{:>3.2f}                 {:>3}                  {:>2}            {:>3.2f}".format(tp_1, vj_1, parc_1, vp_1))
+for i in range(3, 61, 3):
+    print("{:>3.2f}               {:>3.2f}                 {:>3}             {:>3.2f}".format(tp_x, vj_x, parc_x, vp_x))
+    juros_x += 0.05
+    parc_x += 3
+
+    vj_x = (initValue * juros_x)  
+    tp_x =  (initValue + vj_x)
+    vp_x = (tp_x / parc_x)
