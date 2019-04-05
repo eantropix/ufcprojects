@@ -6,14 +6,20 @@ media = 0
 n = 0
 while nota > 0:
     i += 1
-    nota = int(input("Nota do aluno {}: ".format(i))) 
+    nota = float(input("Nota do aluno {}: ".format(i))) 
     if nota >= 0:
         notas += [nota]
         media += nota
         n += 1
 media = media / n
 print("Media da turma: %.2f" % media)
-print(notas)
+
+count = 1
+for i in notas:
+    if 4 <= i < 7:
+        print("Aluno {} ficou de AF com média {}".format(count, i))
+    count += 1
+    
 
 # for i in range(0, 10):
 #     notas[i] = float(input("Insira a %dª nota: " % (i+1)))
