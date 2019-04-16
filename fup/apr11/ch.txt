@@ -1,0 +1,4 @@
+Sort the numbers of a vector with x numbers, with x being informed by the user.
+Output the sorted vector and the distances traveled by each number to their respective
+positions.
+Use repetition structures and DO NOT use the sort() function.
