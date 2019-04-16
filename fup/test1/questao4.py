@@ -44,6 +44,7 @@ print("NOVO ESFORÇO TOTAL: ", new_total)  # Prints it
 
 for i in range(0, 5):
     round(new_effort[i], 2)
-    no_coef[i] = new_effort[i] / c[i]  # Effort value without coefficient
-    new_repeats[i] = no_coef[i] / s[i]  # Effort value without both coefficient and sets, leaving only the repetitions
-    print(s[i], "x", (round(new_repeats[i], 2)), "de", treinos[i])  # Prints each exercise with altered repetitions
+    new_repeats[i] = round(((new_effort[i] / c[i]) / s[i]))  # Repeats = (effort / coef) / sets
+    # no_coef[i] = new_effort[i] / c[i]  # Effort value without coefficient
+    # new_repeats[i] = round(no_coef[i] / s[i])  # Effort value with only the repetitions
+    print(s[i], "x", (new_repeats[i]), "de", treinos[i])  # Prints each exercise with altered repetitions
