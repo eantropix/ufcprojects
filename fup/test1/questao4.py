@@ -42,9 +42,15 @@ if opcao == 'd' or opcao == 'D':  # If it's to decrease:
 new_total = round(new_total, 2)  # Rounds new total effort
 print("NOVO ESFORÇO TOTAL: ", new_total)  # Prints it
 
+comparison_value = []  # Declares list of efforts from outputted exercise
+
 for i in range(0, 5):
     round(new_effort[i], 2)
     new_repeats[i] = round(((new_effort[i] / c[i]) / s[i]))  # Repeats = (effort / coef) / sets
     # no_coef[i] = new_effort[i] / c[i]  # Effort value without coefficient
     # new_repeats[i] = round(no_coef[i] / s[i])  # Effort value with only the repetitions
     print(s[i], "x", (new_repeats[i]), "de", treinos[i])  # Prints each exercise with altered repetitions
+    comparison_value += []
+
+
+
