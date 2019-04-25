@@ -42,15 +42,24 @@ if opcao == 'd' or opcao == 'D':  # If it's to decrease:
 new_total = round(new_total, 2)  # Rounds new total effort
 print("NOVO ESFORÇO TOTAL: ", new_total)  # Prints it
 
-comparison_value = []  # Declares list of efforts from outputted exercise
-
+comparison_value = [0.0] * 5  # Declares list of efforts from outputted exercise
+new_repeats2 = [0] * 5
+total_comparison = 0
 for i in range(0, 5):
     round(new_effort[i], 2)
     new_repeats[i] = round(((new_effort[i] / c[i]) / s[i]))  # Repeats = (effort / coef) / sets
-    # no_coef[i] = new_effort[i] / c[i]  # Effort value without coefficient
-    # new_repeats[i] = round(no_coef[i] / s[i])  # Effort value with only the repetitions
     print(s[i], "x", (new_repeats[i]), "de", treinos[i])  # Prints each exercise with altered repetitions
-    comparison_value += []
+    aux = (new_repeats[i] * c[i] * s[i])  # Calculates effort using new repetitions, to compare with wanted change
+    comparison_value[i] = round(aux, 2)  # Rounds up two decimals and puts in comparison list
+    print("TREINO: ", treinos[i], "VALOR REQUERIDO: ", round(new_effort[i], 2), "VALOR MOSTRADO: ", comparison_value[i])
+    total_comparison += comparison_value[i]
 
+round(total_comparison, 2)
+print(new_total, total_comparison)
 
+# x = (100*a)/b
+# when b is total and a is a fraction of it
+# I need to calculate the wanted percentage from the initial value and compare it to what I have now
 
+a = n_perc/100 * total_inicial
+print(a)
