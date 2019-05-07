@@ -60,6 +60,3 @@ print(new_total, total_comparison)
 # x = (100*a)/b
 # when b is total and a is a fraction of it
 # I need to calculate the wanted percentage from the initial value and compare it to what I have now
-
-a = n_perc/100 * total_inicial
-print(a)
