@@ -1,5 +1,5 @@
 info = []  # List where all graph pieces will be added
-piece = 'x'  # Global variable. Starts is_valid for the first time
+piece = 'X Y 1'  # Global variable. Starts is_valid for the first time
 
 
 def formatter(string):  # Turns a string separated by whitespaces into a list
@@ -12,7 +12,7 @@ def is_valid(piece):
     letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     numbers = '0123456789'
 
-    if piece[0] in letters and piece[1] in letters and piece[2] in numbers:  # If input is correct:
+    if piece[0] in letters.upper() and piece[1] in letters.upper() and piece[2] in numbers:  # If input is correct:
         '''home, target = piece[0], piece[1]  # Variables home and target will be used to see if there's redundancy
         for node in range(0, len(info), 3):
             if (info[node] == target) and (info[node+1] == home):  # If this happens, there is redundancy
@@ -48,9 +48,10 @@ def router(route):
     route = formatter(route)
     start, end = route[0], route[1]
     distance = []
-    for node in range(0, len(info), 3):
-        if info[node] == start:
-            distance.append(start)
+    # for node in range(0, len(info), 3):
+    #     if info[node] == start:
+    #         distance.append(start)
+
 
 print("Please type in all pieces of the graph, according to the following example: A B 5. Type 0 to stop inputting.\n")
 while piece != '0':
