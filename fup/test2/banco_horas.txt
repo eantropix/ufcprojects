@@ -1,0 +1,6 @@
+Alexander   45
+Anderson    12
+Antonio     12
+Carlos      91
+Cesar       98
+Rosemary    78
