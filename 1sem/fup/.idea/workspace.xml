@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17305959-7e50-4bb2-b845-e5157533c3ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../cp/codeforces/158A (Next Round).py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cp/codeforces/1A (Theatre Square).py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cp/codeforces/4A (Watermelon).py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cp/codeforces/71A (Way Too Long Words).py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1000-numbers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/fup.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fup.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph/dumb_graph_pm.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph/dumb_graph_pm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/may7/algorithm1.py" beforeDir="false" afterPath="$PROJECT_DIR$/may7/algorithm1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2/arthur questao1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2/arthur questao2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2/arthur questao3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test2/arthur questao4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../teste.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../uri/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../uri/1011.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../uri/1021.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../uri/1035.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../uri/1036.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../uri/1037.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../uri/1040.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,25 +34,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/graph/dumb_graph_pm.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/may7/algorithm1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="56" column="19" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
-              <folding>
-                <element signature="e#486#1928#1" />
-              </folding>
+            <state relative-caret-position="420">
+              <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/may7/algorithm1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
-            </state>
-          </provider>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/1000-numbers.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -70,6 +80,7 @@
         <option value="$PROJECT_DIR$/test1/questao4.py" />
         <option value="$PROJECT_DIR$/may7/algorithm1.py" />
         <option value="$PROJECT_DIR$/graph/dumb_graph_pm.py" />
+        <option value="$PROJECT_DIR$/1000-numbers.py" />
       </list>
     </option>
   </component>
@@ -113,14 +124,14 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="/usr/bin/python3" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Custom" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -134,7 +145,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.dumb_graph_pm">
+  <component name="RunManager" selected="Python.Python 3.7">
+    <configuration name="Python 3.7" type="PythonConfigurationType" factoryName="Python">
+      <module name="fup" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3.7" />
+      <option name="WORKING_DIRECTORY" value="/usr/bin" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="/usr/bin/python3" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="algorithm1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="fup" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,7 +190,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="dumb_graph_pm" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="dumb_graph_pm" type="PythonConfigurationType" factoryName="Python">
       <module name="fup" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -201,9 +234,14 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.Python 3.7" />
+      <item itemvalue="Python.dumb_graph_pm" />
+      <item itemvalue="Python.algorithm1" />
+      <item itemvalue="Python.questao4" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.dumb_graph_pm" />
         <item itemvalue="Python.algorithm1" />
         <item itemvalue="Python.questao4" />
       </list>
@@ -221,6 +259,7 @@
       <updated>1555441563093</updated>
       <workItem from="1557176770417" duration="8077000" />
       <workItem from="1557257896917" duration="4988000" />
+      <workItem from="1561460431866" duration="525000" />
     </task>
     <task id="LOCAL-00001" summary="Continue in line 53.">
       <created>1557189207601</created>
@@ -233,7 +272,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13065000" />
+    <option name="totallyTimeSpent" value="13590000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -245,10 +284,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="147" width="1299" height="743" extended-state="6" />
-    <editor active="true" />
+    <frame x="70" y="27" width="1296" height="741" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4975728" visible="true" weight="0.20111732" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4975728" visible="true" weight="0.2048" />
       <window_info id="Structure" order="1" sideWeight="0.50242716" side_tool="true" weight="0.207502" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -328,9 +366,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="Continue in line 53." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/fup$dumb_graph_pm.coverage" NAME="dumb_graph_pm Coverage Results" MODIFIED="1557269221970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/graph" />
     <SUITE FILE_PATH="coverage/fup$questao4.coverage" NAME="questao4 Coverage Results" MODIFIED="1557176895397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test1" />
     <SUITE FILE_PATH="coverage/fup$algorithm1.coverage" NAME="algorithm1 Coverage Results" MODIFIED="1557266298127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/may7" />
-    <SUITE FILE_PATH="coverage/fup$dumb_graph_pm.coverage" NAME="dumb_graph_pm Coverage Results" MODIFIED="1557269221970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/graph" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
@@ -347,22 +385,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/graph/dumb_graph_pm.py" />
     <entry file="file://$PROJECT_DIR$/may7/algorithm1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="420">
+          <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graph/dumb_graph_pm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="56" column="19" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
-          <folding>
-            <element signature="e#486#1928#1" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/1000-numbers.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
