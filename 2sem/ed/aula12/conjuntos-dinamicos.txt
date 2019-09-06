@@ -1,0 +1,20 @@
+    O TAD Conjunto Dinâmico é também um contêiner, assim como pilhas e filas.
+Um conjunto dinâmico se difere dos conjuntos "matemáticos" por estes últimos serem
+estáticos, no sentido de que não têm seus elementos alterados(assim, por exemplo,
+na teoria dos conjuntos, se C = A u {x} e x E/ A, então C, que é o resultado da
+"inserção" de x em A, é outro conjunto: C =/= A).
+    Conjuntos dinâmicos têm uma diferença crucial em relação a pilhas e filas: Neles,
+qualquer elemento armazenado pode ser removido. Além disso, é possível consultar se
+um elemento está ou não no conjunto.
+    As seguintes operações são, então, essenciais em conjuntos dinâmicos:
+
+    - Inserir(C, e): Insere o elemento "e" no conjunto "C".
+    - Pertence(C, e): Informa se "e" pertence ao conjunto "C" ou não.
+    - Remove(C, e): Remove "e" de "C".
+
+O percurso dos elementos de um conjunto será estudado naa próxima aula; outras operações,
+como a união e a interseção, são típicas, mas omitiremos.
+
+INSERIR:: Adicionar ao final, com auxílio de um índice
+REMOVER:: Sobrescrever item removido com o último, decrementar índice
+PERTENCE:: Percorrer o vetor até achar
