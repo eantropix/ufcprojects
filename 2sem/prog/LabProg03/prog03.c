@@ -14,7 +14,7 @@ void q1() {
 	}
 }
 //==================================
-int min_n(int *v)
+int min_n(int *v)  // Gets smallest number from array
 {
 	int min = v[0];
 	for (int i = 0; i < 10; ++i)
@@ -23,7 +23,7 @@ int min_n(int *v)
 		}
 	return min;
 }
-int max_n(int *v)
+int max_n(int *v)  // Gets greatest number from array
 {
 	int max = v[0];
 	for (int i = 0; i < 10; ++i)
@@ -39,62 +39,62 @@ void q2() {
 }
 //==================================
 
-int melhor_volta(int n, double *voltas)
+int best_lap(int n, double *laps)
 {
-	val = voltas[0];
-	melhor = 0;
-	for (int i = 1; i < n; ++i)
+	double val = laps[0];
+	int best = 1;
+	for (int i = 1; i <= n; ++i)
 	{
-		if (val > voltas[i] {val = voltas[i]; melhor = i;})
+		if (val > laps[i]) {val = laps[i]; best = i; printf("Actual best: %d\n", best);}
 	}
-	return melhor;
+	return best;
 }
 
-int pior_volta(int n, double *voltas)
+int worst_lap(int n, double *laps)
 {
-	val = voltas[0];
-	pior = 0;
-	for (int i = 1; i < n; ++i)
+	double val = laps[0];
+	int worst = 1;
+	for (int i = 1; i <= n; ++i)
 	{
-		if (val < voltas[i] {val = voltas[i]; pior = i;})
+		if (val < laps[i]) {val = laps[i]; worst = i; printf("Actual worst: %d\n", worst);}
 	}
-	return pior;
+	printf("%d", worst);
+	return worst;
 }
 
-double tempo(int volta, double *voltas)
-{
-	return voltas[volta];
-}
+double time(int volta, double *laps) {return laps[volta];}
 
-double media(int n, double *voltas)
+double average(int n, double *laps)
 {
-	double soma = 0;
+	double sum = 0;
 	for (int i = 0; i < n; ++i)
 	{
-		soma += voltas[i];
+		sum += laps[i];
 	}
-	double media = (soma / n);
-	return media;
+	double avg = (sum / n);
+	return avg;
 }
 void q3() {
-	int N = 0, n_melhor = 0, n_pior = 0;
-	double t_melhor = 0, t_pior = 0, t_media = 0;
+	int N = 0, n_best = 0, n_worst = 0;
+	double t_best = 0, t_worst = 0, t_avg = 0;
 	printf("Número de voltas: ");
 	scanf("%d", &N);
-	double voltas[100] = {};
+	double laps[100] = {0.0};
 	printf("Digite o tempo das voltas\n");
 	for (int i = 0; i < N; ++i)
 	{
-		printf("Volta %d: ", i+1);
-		scanf("%lf", &voltas[i]);
+		printf("Volta %d: ", i);
+		scanf("%lf", &laps[i]);
 	}
-	t_melhor = melhor(N, &n_melhor, voltas);
-	t_pior = pior(N, &n_pior, voltas);
-	t_media = media(N, voltas);
+	n_best = best_lap(N, laps);
+	n_worst = worst_lap(N, laps);
+	t_best = time(n_best, laps);
+	t_worst = time(n_worst, laps);;
+	t_avg = average(N, laps);
 	printf("===Resultados===\n");
-	printf("Melhor volta: %d - Tempo: %lf\n", n_melhor, t_melhor);
-	printf("Pior volta: %d - Tempo: %lf\n", n_pior, t_pior);
-	printf("Média de tempo: %lf\n", t_media);
+	printf("Melhor volta: %d - Tempo: %lf\n", n_best, t_best);
+	printf("Pior volta: %d - Tempo: %lf\n", n_worst, t_worst);
+	printf("Média de tempo: %lf\n", t_avg);
 }
 
 void q4() {
