@@ -106,8 +106,6 @@ void q3() {
 // ============================================
 void fill_array(int size, int array_name, int *p)
 {
-	printf("Insira os valores do Vetor %d: ", array_name);
-	printf("\n");
 	for (int i = 0; i < size; ++i)
 	{
 		printf("%d[%d]: ", array_name, i);
@@ -131,19 +129,9 @@ void q4() {
 	printf("Size: ");
 	scanf("%d", &n);
 	int v1[n]; int v2[n]; int result;
-	// printf("Insira os valores do Vetor A: ");
-	// for (int i = 0; i < 10; ++i)
-	// {
-	// 	printf("a[%d]: ", i);
-	// 	scanf("%d", &a[i]);
-	// }
-	// printf("Insira os valores do Vetor B: ");
-	// for (int i = 0; i < 10; ++i)
-	// {
-	// 	printf("a[%d]: ", i);
-	// 	scanf("%d", &a[i]);
-	// }
+	printf("Insira os valores do Vetor 1\n");
 	fill_array(n, 1, v1);
+	printf("Insira os valores do Vetor 2\n");
 	fill_array(n, 2, v2);
 	result = scalar_product(n, v1, v2);
 	printf("Result: %d\n", result);
@@ -202,22 +190,6 @@ void q6() {
 	else {printf("Número não encontrado");}
 }
 // =========================================
-void ordena (int *sequencia, int n)
-{
-	int *primeiro = sequencia[0]; int *ultimo = sequencia[n-1];
-	int ind = 0;
-	int *aux = sequencia[ind];
-	for (int i = 0; i < n; ++i){
-		if (*ultimo > sequencia[i]) 
-		{
-			++ind;
-			troca (sequencia[ind], sequencia[i]);
-		}
-		else {
-			
-		}
-	}
-}
 void troca (int *x, int *y) 
 {
 	int aux;
@@ -225,8 +197,28 @@ void troca (int *x, int *y)
 	*x = *y;
 	*y = aux;
 }
+
+void ordena (int *sequencia, int n)
+{
+	//int *primeiro = &sequencia[0];
+	int *ultimo = &sequencia[n-1];
+	int ind = 0;
+	//int *aux = &sequencia[ind];
+	for (int i = 0; i < n; ++i){
+		if (*ultimo > sequencia[i]) 
+		{
+			++ind;
+			troca (&sequencia[ind], &sequencia[i]);
+		}
+		else {
+			
+		}
+	}
+}
+
 void q7() {
-	printf ("Digite o tamanho da sequencia: ", "\n");
+	int n;
+	printf ("Digite o tamanho da sequencia: \n");
 	scanf("%d", &n);
 	int v[n];
 	for (int i = 0; i < n; ++i)
@@ -236,26 +228,58 @@ void q7() {
 	}
 }
 // ===================================
-int repeticoes (int numero, int *v)
+void fill_matrix(int **m, int lin, int col)
+{
+	for (int i = 0; i < lin; ++i)
+	{
+		fill_array(col, i, m[i]);
+	}
+}
+int repeticoes (int **v, int m, int n, int num)
 {
 	int rep = 0;
-	for (int i = 0; i < 3; ++i)
+	for (int i = 0; i < m; ++i)
 	{
-		for (int j = 0; i < 4; ++j)
+		for (int j = 0; j < n; ++j)
 		{
-			if ((v[i][j]) == numero) ++rep;
+			if ((v[i][j]) == num) ++rep;
 		}
 	}
 	return rep;
 }
 void q8() {
-	int matrix[3][4] = {{1, 2, 3, 4},{5, 6, 7, 8},{9, 10, 11, 12}};
-	int n;
-	scanf("%d", &n);
-	printf("%d", repeticoes(n, matrix));
+	//int matrix[3][4] = {{1, 2, 3, 4},{5, 6, 7, 8},{9, 10, 11, 12}};
+	int lin, col, num;  // Lines, columns, number
+	printf("Linhas: ");
+	scanf("%d", &lin);
+	printf("Colunas: ");
+	scanf("%d", &col);
+	int **matrix = (int**) malloc(lin*sizeof(int*));  // Dynamically allocating matrix with "lin" lines
+	for(int i = 0; i < lin; ++i)
+	{
+		int *line = (int*) malloc(col*sizeof(int));  // Dynamically allocating line with "col" columns
+		matrix[i] = line;  // Pass line with "col" columns to one of the matrix's lines
+	}
+	fill_matrix(matrix, lin, col);
+	printf("Digite o numero que quer procurar: ");
+	scanf("%d", &num);
+	printf("Repeticoes: %d\n\n", repeticoes(matrix, lin, col, num));
+}
+
+void auto_fill_matrix(char **m, int lin, int col, char neutral)
+{
+	
 }
 
 void q9() {
+	int order = 3;  // Order serves to set a board of size (n x n), where n = order
+	char **matrix = (char**) malloc(order*sizeof(char*));  // Dynamically allocating matrix with "order" lines
+	for(int i = 0; i < order; ++i)
+	{
+		char *line = (char*) malloc(order*sizeof(char));  // Dynamically allocating line with "order" columns
+		matrix[i] = line;  // Pass line with "order" columns to one of the matrix's lines
+	}
+	char cross = 'x', circle = 'o';
 }
 
 void q10() {

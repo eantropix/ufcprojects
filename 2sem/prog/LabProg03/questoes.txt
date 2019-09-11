@@ -1,0 +1,27 @@
+Universidade Federal do Ceará
+Departamento de Computação
+Curso de Ciência da Computação
+Disciplina: Programação - CK0226
+Professor: Lincoln Souza Rocha
+Laboratório de Programação 03 (Vetores)
+
+
+1)  Dado dois vetores, a (5 elementos) e b (8 elementos), faça um programa em C que imprima todos os elementos comuns aos dois vetores.
+
+2)  Faça um programa que determina o máximo e o mínimo de um conjunto de 𝑛 números inteiros armazenados num vetor 𝑎 de 10 elementos. Faça duas funções, uma que retorna o valor máximo e outra que retorne o valor mínimo contidos no conjunto.
+
+3)  Durante uma corrida automobilística com 𝑁 voltas de duração, foram anotados para um piloto, na ordem, os tempos registrados em cada volta. Fazer um programa em C para ler os tempos das 𝑁 voltas, guardar em um vetor, implementar funções para calcular e imprimir: (i) melhor tempo; (ii) a volta em que o melhor tempo ocorreu; (iii) pior tempo; (iv) a volta em que o pior tempo ocorreu; e (v) o tempo médio das 𝑁 voltas.
+
+4)  Crie um programa em C que possua dois vetores de inteiros (𝑎[] 𝑒 𝑏[]) cada um com a capacidade de 10 elementos. O programa deve permitir que seja lido via teclado os dez elementos de cada vetor. Além disso, o programa possui uma função que calcula o produto escalar dos dois vetores de acordo com a formula:
+5)  Dadas duas sequências com 𝑛 números inteiros entre 0 e 9, interpretadas como dois números inteiros de 𝑛 algarismos, calcular a sequência de números que representa a soma dos dois inteiros. Veja o exemplo abaixo para um 𝑛 = 8:
+6) Escreva na função q6() um código em C que leia uma sequência de 𝑛 inteiros, onde 𝑛 é um valor inteiro fornecido pelo usuário. Depois disso, implemente uma função de busca (int buscar(int numero, int* sequencia)) que recebe um número fornecido pelo usuário e verifica se esse número encontra-se a sequência. Caso o número se encontre na sequencia, a função deve retornar seu índice, caso contrario, deve retornar -1. Com base no retorno da função de busca, informe se o número buscado encontra-se na lista e, se afirmativo, em qual posição.
+
+7) Escreva na função q7() um código em C que leia uma sequência de 𝑛 números reais, onde 𝑛 é um valor inteiro fornecido pelo usuário. Em seguida, crie outra função que ordene os elementos da sequência de forma crescente (void ordena(int* sequencia)). Para auxiliar seu trabalho, crie também uma função que faz a troca do conteúdo de dois elementos da sequência (void troca(int* x, int* y)).
+
+8) Dada uma matriz 𝐴 de dimensão n×m de inteiros, escreva uma função que diga quantas vezes um dado número aparece na matriz (int repeticoes(int numero)).
+
+9) O Jogo da Velha é um jogo típico de tabuleiro, onde dois jogadores intercalam jogadas. Um jogador usa a marca × e outro jogador usa a marca Ο para indicar a sua jogada em um tabuleiro de dimensão 3x3. Vence o jogo o jogador que conseguir preencher uma fileira completa, seja na vertical, na horizontal ou na transversal. Escreva um programa que implemente a dinâmica do jogo utilizando uma matriz. O programa deve permitir que os dois jogadores intercalem suas jogadas e avise quando houve um ganhador.
+
+10)  Faça um programa para corrigir uma prova com 10 questões de múltipla escolha (a, b, c, d ou e), em uma turma com 3 alunos. Cada questão vale 1 ponto. Leia o gabarito, e para cada aluno leia sua matricula (número inteiro) e suas respostas. Calcule e escreva:
+a)  Para cada aluno,  sua matrícula, suas respostas, e sua nota.
+b)  O percentual de aprovação, assumindo média igual 7.0.
