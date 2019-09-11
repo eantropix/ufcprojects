@@ -13,7 +13,7 @@ void q1() {
 		}
 	}
 }
-//==================================
+//=========================================
 int min_n(int *v)  // Gets smallest number from array
 {
 	int min = v[0];
@@ -37,34 +37,41 @@ void q2() {
 	printf("%d\n", min_n(a));
 	printf("%d\n", max_n(a));
 }
-//==================================
+//===========================================
 
-int best_lap(int n, double *laps)
+int best_lap(int n, double *laps)  // Calculates the best lap
 {
-	double val = laps[0];
-	int best = 1;
-	for (int i = 1; i <= n; ++i)
+	double val = laps[0];  // At first, the first lap is also the best lap
+	int best = 0;
+	for (int i = 1; i < n; ++i)  // Compares from the second to the last
 	{
-		if (val > laps[i]) {val = laps[i]; best = i; printf("Actual best: %d\n", best);}
+		if (val > laps[i])  // If the current best lap took longer, it must change
+		{
+			val = laps[i]; 
+			best = i;
+		}
 	}
 	return best;
 }
 
-int worst_lap(int n, double *laps)
+int worst_lap(int n, double *laps)  // Calculates the best lap
 {
-	double val = laps[0];
-	int worst = 1;
-	for (int i = 1; i <= n; ++i)
+	double val = laps[0];  // At first, the first lap is also the worst lap
+	int worst = 0;
+	for (int i = 1; i < n; ++i)  // Compares from the second to the last
 	{
-		if (val < laps[i]) {val = laps[i]; worst = i; printf("Actual worst: %d\n", worst);}
+		if (val < laps[i])  // If the current best lap took longer, it must change
+		{
+			val = laps[i]; 
+			worst = i; 
+		}
 	}
-	printf("%d", worst);
 	return worst;
 }
 
-double time(int volta, double *laps) {return laps[volta];}
+double time(int lap_number, double *laps) {return laps[lap_number];}  // Gets time from lap
 
-double average(int n, double *laps)
+double average(int n, double *laps)  // Basic arithmetic average function
 {
 	double sum = 0;
 	for (int i = 0; i < n; ++i)
@@ -96,20 +103,156 @@ void q3() {
 	printf("Pior volta: %d - Tempo: %lf\n", n_worst, t_worst);
 	printf("Média de tempo: %lf\n", t_avg);
 }
+// ============================================
+void fill_array(int size, int array_name, int *p)
+{
+	printf("Insira os valores do Vetor %d: ", array_name);
+	printf("\n");
+	for (int i = 0; i < size; ++i)
+	{
+		printf("%d[%d]: ", array_name, i);
+		scanf("%d", &p[i]);
+		printf("\n");
+	}
+}
+
+int scalar_product(int size, int *p1, int *p2)  // Pre-condition: Both arrays have the same size
+{
+	int sp = 0;
+	for (int i = 0; i < size; ++i)
+	{
+		sp += (p1[i] * p2[i]);
+	}
+	return sp;
+}
 
 void q4() {
+	int n;
+	printf("Size: ");
+	scanf("%d", &n);
+	int v1[n]; int v2[n]; int result;
+	// printf("Insira os valores do Vetor A: ");
+	// for (int i = 0; i < 10; ++i)
+	// {
+	// 	printf("a[%d]: ", i);
+	// 	scanf("%d", &a[i]);
+	// }
+	// printf("Insira os valores do Vetor B: ");
+	// for (int i = 0; i < 10; ++i)
+	// {
+	// 	printf("a[%d]: ", i);
+	// 	scanf("%d", &a[i]);
+	// }
+	fill_array(n, 1, v1);
+	fill_array(n, 2, v2);
+	result = scalar_product(n, v1, v2);
+	printf("Result: %d\n", result);
 }
-
+// =======================================================
 void q5() {
+	
+	int a[10] = {9, 6, 1, 2, 7, 4, 0, 9, 8, 5}; 
+	int b[10] = {9, 8, 1, 5, 3, 7, 9, 0, 4, 2};
+	int r[11];  // Result must always have 1 more slot than a and b.
+	for (int i = 9; i >= 0; --i)
+	{
+		int aux = a[i] + b[i];
+		if (aux >= 10)
+		{
+			r[i+1] = aux - 10;
+			if (i == 0)
+			{
+				r[i] = 1;
+			}
+			a[i-1] += 1;
+		}
+		else r[i+1] = aux;
+	}
+	for (int i = 0; i < 11; ++i)
+	{
+		printf("%d ", r[i]);
+	}
 }
-
+// ===============================================
+int buscar (int numero, int *sequencia)
+{
+	//int tamanho = sizeof(sequencia);
+	for(int i = 0; i < 5; ++i)
+	{
+		//printf("Comparando %d com %d\n", numero, sequencia[i]);
+		if (numero == sequencia[i]) {/*printf("Deu\n");*/ return i;}
+		//printf("Passou\n");
+	}
+	return -1;
+}
 void q6() {
+	int n, x = 0, indice;
+	printf("Digite o tamanho: ");
+	scanf("%d", &n);
+	int v[n];
+	for (int i = 0; i < n; ++i)
+	{
+		printf("v[%d]: ", i);
+		scanf("%d", &v[i]);
+	}
+	printf("Que número deseja procurar? ");
+	scanf("%d", &x);
+	indice = buscar(x, v);
+	if (indice != -1) {printf("%d encontrado no índice %d", v[indice], indice);}
+	else {printf("Número não encontrado");}
 }
-
+// =========================================
+void ordena (int *sequencia, int n)
+{
+	int *primeiro = sequencia[0]; int *ultimo = sequencia[n-1];
+	int ind = 0;
+	int *aux = sequencia[ind];
+	for (int i = 0; i < n; ++i){
+		if (*ultimo > sequencia[i]) 
+		{
+			++ind;
+			troca (sequencia[ind], sequencia[i]);
+		}
+		else {
+			
+		}
+	}
+}
+void troca (int *x, int *y) 
+{
+	int aux;
+	aux = *x;
+	*x = *y;
+	*y = aux;
+}
 void q7() {
+	printf ("Digite o tamanho da sequencia: ", "\n");
+	scanf("%d", &n);
+	int v[n];
+	for (int i = 0; i < n; ++i)
+	{
+		printf("v[%d]: ", i);
+		scanf("%d", &v[i]);
+	}
 }
-
+// ===================================
+int repeticoes (int numero, int *v)
+{
+	int rep = 0;
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; i < 4; ++j)
+		{
+			if ((v[i][j]) == numero) ++rep;
+		}
+	}
+	return rep;
+}
 void q8() {
+	int matrix[3][4] = {{1, 2, 3, 4},{5, 6, 7, 8},{9, 10, 11, 12}};
+	int n;
+	scanf("%d", &n);
+	printf("%d", repeticoes(n, matrix));
 }
 
 void q9() {
