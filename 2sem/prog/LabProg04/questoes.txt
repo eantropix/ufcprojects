@@ -1,0 +1,76 @@
+Universidade Federal do Ceará
+Departamento de Computação
+Curso de Ciência da Computação
+Disciplina: Programação - CK0226
+Professor: Lincoln Souza Rocha
+Laboratório de Programação 04 (String, Alocação Dinâmica e Tipo Estruturado)
+
+
+
+1) Escreva um programa que implemente as seguintes funções: 
+
+a)  void troca(char *string): que transforma todos os caracteres de uma string em
+minúsculos em maiúsculos e os maiúsculos em minúsculos.
+
+b)  int ocorrencia(char *string, char caractere): que recebe uma string e um
+caractere, e retorne o número de vezes que esse caractere aparece na string.
+
+c)  void remove(char *string, char caractere): que recebe uma string e um
+caractere, e apague todas as ocorrências desses caractere na string.
+
+d)  void titulo(char *string): que altera a primeira letra de cada uma das palavras da
+string deixando-a em maiúsculo.
+
+e)  void inverte(char *string): que receba uma string e a retorne escrita de trás pra
+frente.
+
+2) Escreva um programa que leia uma string do teclado e diga se ela é um palíndromo. Uma string éum palíndromo quando pode ser lida tanto de trás pra frente quanto de frente para trás e possui exatamente a mesma sequencia de caracteres. Exemplos: ASA e SUBI NO ONIBUS. Desconsidere os espaços em branco. Defina uma função chamada int palindromo(char *string) que receba uma string como parâmetro e retorne 1 se ela for um palíndromo ou 0, caso contrário. Dica: use a função do item (e) da questão anterior.
+
+3) Escreva um programa que implemente as seguintes funções:
+
+a) int ocorrencia(char *frase, char *palavra): que recebe duas strings, e retorne o 1 se a segunda string (palavra) ocorre na primeira string (frase) ou 0, caso contrário. Se uma string A é parte de uma string B, diz-se que A é substring de B.
+
+b)  int nocorrencias(char *frase, char *palavra): que recebe duas strings, e retorne o número de vezes que a segunda string (palavra) ocorre na primeira string
+(frase).
+
+c) int pocorrencia(char *frase, char *palavra): que recebe duas strings, e retorne a posição da primeira ocorrência da segunda string (palavra) na primeira string (frase). Exemplo para frase = “Eu gosto do curso de Ciência de Computação e de programar!”, palavra = “de”, a resposta deve ser: 18.
+
+d) void remove(char *frase, char *palavra): que remove todas as ocorrências da string palavra da string frase. Exemplo: Se frase = “Abra a porta para entrar para descansar calmamente”, palavra = “para”, a resposta deve ser: “Abra a porta entrar e descansar calmamente”.
+
+e) void insercao(char *frase, char *palavra, int pos): que recebe duasstrings e um inteiro, e insere a segunda string (palavra) na primeira string (frase) a partir da posição pos. Exemplo para frase = “Alo Mundo”, palavra = “ para o” e pos = 3. a resposta deve ser: “Alo para o Mundo”.
+
+f) void subsitui(char *frase, char *palavra, char *nova): que faça substituição de todas as ocorrências da string palavra pela string nova dentro da stringfrase. Exemplo: Se frase = “Abra a porta para entrar para descansar calmamente”, palavra = “para” e nova = “e tente”, a resposta deve ser: “Abra a porta e tente entrar e tente descansar calmamente”.
+
+4) Faça um programa que leia um valor n e crie dinamicamente um vetor de n elementos e passe esse vetor para uma função que vai ler os elementos desse vetor (void entrada(int *vetor)). Depois de executada a função entrada(), o vetor preenchido deve ser impresso. Além disso, antes de finalizar o programa, deve-se liberar a área de memória alocada.
+
+5)  Crie uma função que receba como parâmetros dois vetores de inteiros: x1 e x2 e as suas respectivas quantidades de elementos: n1 e n2. A função deverá retornar um ponteiro para um terceiro vetor, x3, alocado dinamicamente, contendo a união de x1 e x2 e usar o ponteiro qtd para retornar o tamanho de x3. Por exemplo, sendo x1 = {1, 3, 5, 6, 7} e x2 = {1, 3, 4, 6, 8}, x3 irá conter {1, 3, 4, 5, 6, 7, 8} com qtd = 7. Assinatura da função: int* uniao(int *x1, int *x2, int n1, int n2, int* qtd)
+
+6)  Crie uma função que receba como parâmetros dois vetores de inteiros: x1 e x2 e as suas respectivas quantidades de elementos: n1 e n2. A função deverá retornar um ponteiro para um terceiro vetor, x3, alocado dinamicamente, contendo a intersecção de x1 e x2 e usar o ponteiro qtd para retornar o tamanho de x3. Por exemplo, sendo x1 = {1, 3, 5, 6, 7} e x2 = {1, 3, 4, 6, 8}, x3 irá conter {1, 3, 6}  com qtd = 3. Assinatura da função: int* interseccao(int *x1, int *x2, int n1, int n2, int *qtd)
+
+7) Considerando as declarações a seguir para representar o registro de de alunos de uma disciplina, implemente a função Aluno *cadastro() que aloca dinamicamente um aluno, captura as informações do aluno via teclado e retorna esse aluno. Além disso, crie uma outra função (void imprime_aprovados(int n, Aluno *alunos)) que, dado um vetor de n alunos cadastrados,  imprima a lista de alunos aprovados ((p1 + p2 + p3)/3 >= 7.0) agrupados por turma. Além da média, deve ser exibido na tela o número de matrícula, o nome e a turma de todos os alunos que foram aprovados na disciplina. A estrutura aluno deve ter os campos char nome[81] e char matricula[8], char turma, float p1, float p2 e float p3. Defina o tipo Aluno (typedef struct aluno Aluno).
+
+8) Dada uma função para calcular a área de um polígono (area(int n, Ponto* p)). Crie um programa para capturar do teclado o número de pontos que delimitam o polígono. O programa deve, então, alocar dinamicamente o vetor de pontos, capturar as coordenadas dos pontos e, chamando a função area(), exibir o valor da área. A estrutura ponto deve ter os campos float x e float y. Além disso, não esqueça de definir o tipo Ponto (typedef struct ponto Ponto) e, ao final da execução do programa, deslocar o vetor de pontos.
+
+float area(int n, Ponto* p) {
+
+    int i, j;
+
+    float a = 0;
+
+    for (i=0; i<n; i++) {
+
+       j = (i+1)/n /* próximo índice (incremento circular) */
+
+       a += ((p[j].x - p[i].x) * (p[i].y + p[j].y))/2;
+
+    }
+
+    if (a < 0)
+
+      return -a;
+
+    else
+
+      return a;
+
+}
