@@ -200,18 +200,17 @@ void troca (int *x, int *y)
 
 void ordena (int *sequencia, int n)
 {
-	//int *primeiro = &sequencia[0];
-	int *ultimo = &sequencia[n-1];
-	int ind = 0;
-	//int *aux = &sequencia[ind];
-	for (int i = 0; i < n; ++i){
-		if (*ultimo > sequencia[i]) 
+	int flag = 1;
+	while(flag)
+	{
+		flag = 0;
+		for (int i = 0; i < (n - 1); ++i)
 		{
-			++ind;
-			troca (&sequencia[ind], &sequencia[i]);
-		}
-		else {
-			
+			if (sequencia[i] > sequencia[i+1])
+			{
+				flag = 1;
+				troca(&sequencia[i], &sequencia[i+1]);
+			}
 		}
 	}
 }
@@ -220,12 +219,18 @@ void q7() {
 	int n;
 	printf ("Digite o tamanho da sequencia: \n");
 	scanf("%d", &n);
-	int v[n];
+	int *v = (int*) malloc (n*sizeof(int));
 	for (int i = 0; i < n; ++i)
 	{
 		printf("v[%d]: ", i);
 		scanf("%d", &v[i]);
 	}
+	ordena(v, n);
+	for (int i = 0; i < n; ++i)
+	{
+		printf("%d ", v[i]);
+	}
+
 }
 // ===================================
 void fill_matrix(int **m, int lin, int col)
@@ -282,28 +287,28 @@ void play(char player, char** matrix)
 }
 int is_winner(char player, char** matrix)
 {
-	if ((matrix[0][0] == matrix[1][1]) && (matrix[1][1] == matrix[2][2])) // Diagonal Principal
-		{return 1;}
-	else if ((matrix[0][2] == matrix[1][1]) && (matrix[1][1] == matrix[2][0])) // Diagonal Secund.
-		{return 1;}
-	else if ((matrix[0][0] == matrix[0][1]) && (matrix[0][1] == matrix[0][2])) // Primeira linha
-		{return 1;}
-	else if ((matrix[1][0] == matrix[1][1]) && (matrix[1][1] == matrix[1][2])) // Segunda linha
-		{return 1;}
-	else if ((matrix[2][0] == matrix[2][1]) && (matrix[2][1] == matrix[2][2])) // Terceira linha
-		{return 1;}
-	else if ((matrix[0][0] == matrix[1][0]) && (matrix[1][0] == matrix[2][0])) // Primeira coluna
-		{return 1;}
-	else if ((matrix[0][1] == matrix[1][1]) && (matrix[1][1] == matrix[2][1])) // Segunda coluna
-		{return 1;}
-	else if ((matrix[0][2] == matrix[1][2]) && (matrix[1][2] == matrix[2][2])) // Terceira coluna
-		{return 1;}
+	if 		((matrix[0][0] != '.') && (matrix[0][0] == matrix[1][1]) && (matrix[1][1] == matrix[2][2])) // Diagonal Principal
+		/* printf("Case 1");*/return 1;
+	else if ((matrix[0][2] != '.') && (matrix[0][2] == matrix[1][1]) && (matrix[1][1] == matrix[2][0])) // Diagonal Secund.
+		/* printf("Case 2");*/return 1;
+	else if ((matrix[0][0] != '.') && (matrix[0][0] == matrix[0][1]) && (matrix[0][1] == matrix[0][2])) // Primeira linha
+		/* printf("Case 3");*/return 1;
+	else if ((matrix[1][0] != '.') && (matrix[1][0] == matrix[1][1]) && (matrix[1][1] == matrix[1][2])) // Segunda linha
+		/* printf("Case 4");*/return 1;
+	else if ((matrix[2][0] != '.') && (matrix[2][0] == matrix[2][1]) && (matrix[2][1] == matrix[2][2])) // Terceira linha
+		/* printf("Case 5");*/return 1;
+	else if ((matrix[0][0] != '.') && (matrix[0][0] == matrix[1][0]) && (matrix[1][0] == matrix[2][0])) // Primeira coluna
+		/* printf("Case 6");*/return 1;
+	else if ((matrix[0][1] != '.') && (matrix[0][1] == matrix[1][1]) && (matrix[1][1] == matrix[2][1])) // Segunda coluna
+		/* printf("Case 7");*/return 1;
+	else if ((matrix[0][2] != '.') && (matrix[0][2] == matrix[1][2]) && (matrix[1][2] == matrix[2][2])) // Terceira coluna
+		/* printf("Case 8");*/return 1;
 	return 0;
 }
-void next_player(char *player)
+char next_player(char *player)
 {
-	if (player = 'o') return 'x';
-	else return 'o';
+	if (*player == 'o') return ('x');
+	else return ('o');
 }
 void show_matrix(char **m)
 {
@@ -316,6 +321,16 @@ void show_matrix(char **m)
 		printf("\n");
 	}
 }
+void fill_matrix_2(char **m)
+{
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; ++j)
+		{
+			m[i][j] = '.';
+		}
+	}
+}	
 void q9() {
 	int someone_won = 0;
 	char player = 'x';
@@ -325,20 +340,72 @@ void q9() {
 		char *line = (char*) malloc(3*sizeof(char));  // Dynamically allocating line with "col" columns
 		matrix[i] = line;  // Pass line with "col" columns to one of the matrix's lines
 	}
-
-	show_matrix(matrix);
+	fill_matrix_2(matrix);
 	while (!someone_won)
 	{
-		show_matrix(&matrix);
-		play(player, &matrix);
-		if (is_winner(player, &matrix)) {someone_won = 1;}
-		else next_player(&player);
+		printf("Player %c 's turn: \n", player);
+		show_matrix(matrix);
+		play(player, matrix);
+		if (is_winner(player, matrix)) {someone_won = 1;}
+		else {printf("Here: "); player = next_player(&player);}
 	}
 	printf("Player %c won!\n", player);
 	show_matrix(matrix);
 }
+// ===================================================
+int calcula_nota(int aluno, char** m, char *g, int n_questoes)
+{
+	int acertos = 0;
+	for (int j = 0; j < n_questoes; ++j)
+	{
+		if (m[aluno][j] == g[j]) ++acertos;
+	}
+	return acertos;
+}
+
 
 void q10() {
+	int matriculas[3] = {0, 0, 0};
+	int n_questoes = 3;
+	char *gabarito = (char*) malloc(n_questoes*sizeof(char)); 
+	double n_aprovados = 0, perc_aprov = 0;
+	char **respostas = (char**) malloc(3*sizeof(char*));  // Dynamically allocating matrix with "lin" lines
+	for(int i = 0; i < 3; ++i)
+	{
+		char *r_aluno = (char*) malloc(n_questoes*sizeof(char));  // Dynamically allocating line with "col" columns
+		respostas[i] = r_aluno;  // Pass line with "col" columns to one of the matrix's lines
+	} 
+	printf("-- Insira o gabarito --\n");
+	for (int i = 0; i < n_questoes; ++i)
+	{
+		printf("Questão %d: ", i);
+		scanf(" %c", &gabarito[i]);
+	}
+	for (int i = 0; i < 3; ++i)
+	{
+		printf("Insira a matricula do Aluno %d: ", i);
+		scanf("%d", &matriculas[i]);
+		printf("Insira as questões do Aluno %d\n", matriculas[i]);
+		for (int j = 0; j < n_questoes; ++j)
+		{
+			printf("Questão %d: ", j);
+			scanf(" %c", &respostas[i][j]);
+		}
+	}
+	for (int i = 0; i < 3; ++i)
+	{
+		printf("-- Aluno %d - Matricula %d -- \n", i, matriculas[i]);
+		printf("Respostas: \n");
+		for (int j = 0; j < n_questoes; ++j)
+		{
+			printf("%c ", respostas[i][j]);
+		}
+		int nota = calcula_nota(i, respostas, gabarito, n_questoes);
+		printf("\nNota: %d\n\n", nota);
+		if (nota >= 2) ++n_aprovados;
+	}
+	perc_aprov = n_aprovados / 3.0;
+	printf("Percentual de aprovação: %.3lf", perc_aprov);
 }
 
 
