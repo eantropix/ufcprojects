@@ -298,26 +298,44 @@ int is_winner(char player, char** matrix)
 		{return 1;}
 	else if ((matrix[0][2] == matrix[1][2]) && (matrix[1][2] == matrix[2][2])) // Terceira coluna
 		{return 1;}
-	
-
-	
-
+	return 0;
 }
-void q9() {
-
-	//int order = 3;  // Order serves to set a board of size (n x n), where n = order
-	char matrix[3][3] = {{'.', '.', '.'}, {'.', '.', '.'}, {'.', '.', '.'}};
-	//char cross = 'x', circle = 'o';
-	//int item = 1;
+void next_player(char *player)
+{
+	if (player = 'o') return 'x';
+	else return 'o';
+}
+void show_matrix(char **m)
+{
 	for (int i = 0; i < 3; ++i)
 	{
 		for (int j = 0; j < 3; ++j)
 		{
-			printf("%c ", matrix[i][j]);
+			printf("%c ", m[i][j]);
 		}
 		printf("\n");
 	}
+}
+void q9() {
+	int someone_won = 0;
+	char player = 'x';
+	char **matrix = (char**) malloc(3*sizeof(char*));  // Dynamically allocating matrix with "lin" lines
+	for(int i = 0; i < 3; ++i)
+	{
+		char *line = (char*) malloc(3*sizeof(char));  // Dynamically allocating line with "col" columns
+		matrix[i] = line;  // Pass line with "col" columns to one of the matrix's lines
+	}
 
+	show_matrix(matrix);
+	while (!someone_won)
+	{
+		show_matrix(&matrix);
+		play(player, &matrix);
+		if (is_winner(player, &matrix)) {someone_won = 1;}
+		else next_player(&player);
+	}
+	printf("Player %c won!\n", player);
+	show_matrix(matrix);
 }
 
 void q10() {
