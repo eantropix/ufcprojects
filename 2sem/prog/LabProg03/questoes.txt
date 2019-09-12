@@ -25,3 +25,7 @@ Laboratório de Programação 03 (Vetores)
 10)  Faça um programa para corrigir uma prova com 10 questões de múltipla escolha (a, b, c, d ou e), em uma turma com 3 alunos. Cada questão vale 1 ponto. Leia o gabarito, e para cada aluno leia sua matricula (número inteiro) e suas respostas. Calcule e escreva:
 a)  Para cada aluno,  sua matrícula, suas respostas, e sua nota.
 b)  O percentual de aprovação, assumindo média igual 7.0.
+
+00 01 02
+10 11 12
+20 21 22

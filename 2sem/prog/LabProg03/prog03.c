@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
+// ========================================
 void q1() {
 	int a[5] = {2, 3, 5, 7, 11};
 	int b[8] = {1, 2, 3, 4, 5, 6, 7, 8};
@@ -265,21 +265,59 @@ void q8() {
 	scanf("%d", &num);
 	printf("Repeticoes: %d\n\n", repeticoes(matrix, lin, col, num));
 }
+// ==========================================
 
-void auto_fill_matrix(char **m, int lin, int col, char neutral)
+void play(char player, char** matrix)
 {
-	
+	int lin, col;
+	do {
+		printf("Coordinates: ");
+		scanf("%d %d", &lin, &col);
+		if (matrix[lin][col] != '.')
+		{
+			printf("Invalid coordinate!\n");
+		}
+	}while (matrix[lin][col] != '.');
+	matrix[lin][col] = player;
 }
+int is_winner(char player, char** matrix)
+{
+	if ((matrix[0][0] == matrix[1][1]) && (matrix[1][1] == matrix[2][2])) // Diagonal Principal
+		{return 1;}
+	else if ((matrix[0][2] == matrix[1][1]) && (matrix[1][1] == matrix[2][0])) // Diagonal Secund.
+		{return 1;}
+	else if ((matrix[0][0] == matrix[0][1]) && (matrix[0][1] == matrix[0][2])) // Primeira linha
+		{return 1;}
+	else if ((matrix[1][0] == matrix[1][1]) && (matrix[1][1] == matrix[1][2])) // Segunda linha
+		{return 1;}
+	else if ((matrix[2][0] == matrix[2][1]) && (matrix[2][1] == matrix[2][2])) // Terceira linha
+		{return 1;}
+	else if ((matrix[0][0] == matrix[1][0]) && (matrix[1][0] == matrix[2][0])) // Primeira coluna
+		{return 1;}
+	else if ((matrix[0][1] == matrix[1][1]) && (matrix[1][1] == matrix[2][1])) // Segunda coluna
+		{return 1;}
+	else if ((matrix[0][2] == matrix[1][2]) && (matrix[1][2] == matrix[2][2])) // Terceira coluna
+		{return 1;}
+	
 
+	
+
+}
 void q9() {
-	int order = 3;  // Order serves to set a board of size (n x n), where n = order
-	char **matrix = (char**) malloc(order*sizeof(char*));  // Dynamically allocating matrix with "order" lines
-	for(int i = 0; i < order; ++i)
+
+	//int order = 3;  // Order serves to set a board of size (n x n), where n = order
+	char matrix[3][3] = {{'.', '.', '.'}, {'.', '.', '.'}, {'.', '.', '.'}};
+	//char cross = 'x', circle = 'o';
+	//int item = 1;
+	for (int i = 0; i < 3; ++i)
 	{
-		char *line = (char*) malloc(order*sizeof(char));  // Dynamically allocating line with "order" columns
-		matrix[i] = line;  // Pass line with "order" columns to one of the matrix's lines
+		for (int j = 0; j < 3; ++j)
+		{
+			printf("%c ", matrix[i][j]);
+		}
+		printf("\n");
 	}
-	char cross = 'x', circle = 'o';
+
 }
 
 void q10() {
