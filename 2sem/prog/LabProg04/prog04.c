@@ -14,6 +14,37 @@ void troca (char *string)
     item = string[index];
   }
 }
+int ocorrencia (char *string, char caractere)
+{
+  int n_ocorre = 0;
+  int index = 0;
+  char item = string[index];
+  while (item != '\0')
+  {
+    if (item == caractere) {++n_ocorre;}
+    ++index;
+    item = string[index];
+  }
+  return n_ocorre;
+}
+void remove (char *string, char caractere)
+{
+  int index = 0;
+  char item = string[index];
+  while (item != '\0')
+  {
+    if (item == caractere) {string[index] = '0';}
+    ++index;
+    item = string[index];
+  }
+}
+void titulo (char *string)
+{
+  char *letra = (char*) malloc (1 * sizeof(char));
+  letra = string[0];
+  troca[letra];
+  
+}
 void inserir_vetor(char *string, int n)
 {
   for (int i = 0; i < n; ++i)
@@ -23,11 +54,15 @@ void inserir_vetor(char *string, int n)
   }
   printf("\n");
 }
-void mostrar_vetor(char *string, int n)
+void mostrar_vetor(char *string)
 {
-  for (int i = 0; i < n; ++i)
+  int index = 0;
+  char item = string[index];
+  while (item != '\0')
   {
-    printf(" %c", string[i]);
+    printf(" %c", item);
+    ++index;
+    item = string[index];
   }
   printf("\n\n");
 }
@@ -38,15 +73,14 @@ void q1() {
   char *vetor = (char*) malloc ((n+1)*sizeof(char));  // Allocate n+1 slots, last slot (n) will stop the function
   inserir_vetor(vetor, n);
   printf("Antes da inversão: ");
-  mostrar_vetor(vetor, n);
+  mostrar_vetor(vetor);
   troca(vetor);
   printf("Depois da inversão: ");
-  mostrar_vetor(vetor, n);
-
-
+  mostrar_vetor(vetor);
 }
 // ==============================================
 void q2() {
+
 }
 
 void q3() {
