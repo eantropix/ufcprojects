@@ -9,6 +9,7 @@ void troca (char *string)
   {
     if ((65 <= item) && (item <= 90)) {string[index] = (item + 32);}
     else if ((97 <= item) && (item <= 122)) {string[index] = (item - 32);}
+    else if (item == ' ') {continue;}
     else {printf("Trocou n kkk"); break;}
     ++index;
     item = string[index];
@@ -27,13 +28,13 @@ int ocorrencia (char *string, char caractere)
   }
   return n_ocorre;
 }
-void remove (char *string, char caractere)
+void remover (char *string, char caractere)
 {
   int index = 0;
   char item = string[index];
   while (item != '\0')
   {
-    if (item == caractere) {string[index] = '0';}
+    if (item == caractere) {string[index] = ' ';}
     ++index;
     item = string[index];
   }
@@ -41,20 +42,33 @@ void remove (char *string, char caractere)
 void titulo (char *string)
 {
   char *letra = (char*) malloc (1 * sizeof(char));
-  letra = string[0];
-  troca[letra];
-  
+  letra = &string[0];
+  troca(letra);
 }
-void inserir_vetor(char *string, int n)
+void inverte (char *string)
 {
-  for (int i = 0; i < n; ++i)
+  int index = 0, dir = 0, tam = 0;
+  char item = string[index];
+  while (item != '\0')
   {
-    printf("Posicao %d: ", i);
-    scanf(" %c", &string[i]);
+    dir = index;
+    ++tam; ++index;
+    item = string[index];
   }
+  for (int esq = 0; esq < (tam / 2); ++esq, --dir)
+  {
+    char aux = string[esq];
+    string[esq] = string[dir];
+    string[dir] = aux;
+  }
+}
+void inserir_string(char *string)
+{
+  printf("Vetor: ");
+  scanf(" %[^\n]s", string);
   printf("\n");
 }
-void mostrar_vetor(char *string)
+void mostrar_string(char *string)
 {
   int index = 0;
   char item = string[index];
@@ -70,17 +84,55 @@ void q1() {
   int n;
   printf("Tamanho: ");
   scanf("%d", &n);
-  char *vetor = (char*) malloc ((n+1)*sizeof(char));  // Allocate n+1 slots, last slot (n) will stop the function
-  inserir_vetor(vetor, n);
-  printf("Antes da inversão: ");
-  mostrar_vetor(vetor);
+  char *vetor = (char*) malloc ((n+1)*sizeof(char));
+  inserir_string(vetor);
+  printf("Antes da troca: ");
+  mostrar_string(vetor);
   troca(vetor);
-  printf("Depois da inversão: ");
-  mostrar_vetor(vetor);
+  printf("Depois da troca: ");
+  mostrar_string(vetor);
+  titulo(vetor);
+  printf("Mudando o titulo: ");
+  mostrar_string(vetor);
+  inverte(vetor);
+  printf("E pra inverter essa bagaça: ");
+  mostrar_string(vetor);
+  remover(vetor, 'a');
+  printf("Agora a gente tira esse 'a': ");
+  mostrar_string(vetor);
 }
 // ==============================================
+int eh_palindromo(char *string)
+{
+  int index = 0, esq = 0, dir = 0, tam = 0, erros = 0, flag = 1;
+  char item = string[index];
+  while (item != '\0')  // Loop para pegar o último índice do vetor, e o seu tamanho
+  {
+    dir = index;
+    ++tam; ++index;
+    item = string[index];
+  }
+  while (esq < (tam / 2) && flag)
+  {
+    if (string[esq] == ' ') {++esq;}
+    if (string[dir] == ' ') {--dir;}
+    if (string[esq] != string[dir]) {++erros;}
+    if (erros) flag = 0;
+    ++esq; --dir;
+  }
+  if (erros) {return 0;}
+  else {return 1;}
+}
 void q2() {
-
+  int n;
+  printf("Digite o tamanho: ");
+  scanf("%d", &n);
+  char *str = (char*) malloc (n*sizeof(char));
+  printf("Digite a frase: ");
+  scanf(" %[^\n]s", str);
+  int res = eh_palindromo(str);
+  if (res) {printf("Palindromo");}
+  else     {printf("Não palindromo");}
 }
 
 void q3() {
