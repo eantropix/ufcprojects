@@ -102,6 +102,17 @@ void q1() {
   mostrar_string(vetor);
 }
 // ==============================================
+int acha_index(char *string, int *dir)
+{
+  int index = 0, esq = 0, dir = 0, tam = 0, erros = 0, flag = 1;
+  char item = string[index];
+  while (item != '\0')  // Loop para pegar o último índice do vetor, e o seu tamanho
+  {
+    dir = index;
+    ++tam; ++index;
+    item = string[index];
+  }
+}
 int eh_palindromo(char *string)
 {
   int index = 0, esq = 0, dir = 0, tam = 0, erros = 0, flag = 1;
@@ -121,7 +132,7 @@ int eh_palindromo(char *string)
     ++esq; --dir;
   }
   if (erros) {return 0;}
-  else {return 1;}
+  else       {return 1;}
 }
 void q2() {
   int n;
@@ -134,8 +145,15 @@ void q2() {
   if (res) {printf("Palindromo");}
   else     {printf("Não palindromo");}
 }
+// ========================================================
+
+int ocorrencia(char *frase, char *palavra)
+{
+
+}
 
 void q3() {
+
 }
 
 void q4() {
