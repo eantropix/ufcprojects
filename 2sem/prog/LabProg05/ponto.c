@@ -28,7 +28,7 @@ void acessaP(Ponto* p, float* x, float* y)
 /* Função atribuiP - Atribui novos valores às coordenadas de um ponto */ 
 void atribuiP(Ponto* p, float x, float y)
 {
-    (*p).x = x; (*p).y = y;
+    p->x = x; p->y = y;
 }
 
 /* Função distanciaP - Retorna a distância entre dois pontos */ 

@@ -1,8 +1,8 @@
 /* TAD: Circulo (ponto,raio) */ 
 /* Tipo exportado */
 #include "ponto.h"
-#ifndef CIRCULO
-#define CIRCULO
+#ifndef CIRCULO_H
+#define CIRCULO_H
 
 struct circulo
 {

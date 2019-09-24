@@ -1,11 +1,11 @@
 /* TAD: Triangulo (pontoA,pontoB,pontoC) */ 
 /* Tipo exportado */
 #include "ponto.h"
-#ifndef TRIANGULO
-#define TRIANGULO
+#ifndef TRIANGULO_H
+#define TRIANGULO_H
 struct triangulo
 {
-    Ponto* p1, p2, p3;
+    Ponto* p1; Ponto* p2; Ponto* p3;
 };
 
 typedef struct triangulo Triangulo;

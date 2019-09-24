@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdlib.h>
 #include "ponto.h"
 #include "circulo.h"
 #ifndef M_PI
@@ -9,6 +10,7 @@ Circulo* criaC(Ponto* p, float raio)
     Circulo *c = (Circulo*) malloc (sizeof(Circulo)); return c;
 }
 
+
 /* Função liberaC - Libera a memória de um circulo previamente criado */ 
 void liberaC(Circulo** c)
 {
@@ -18,21 +20,21 @@ void liberaC(Circulo** c)
 /* Função acessaC - Retorna os valores das coordenadas de um circulo e seu raio */ 
 void acessaC(Circulo* c, float* x, float* y, float* r)
 {
-    *x = c -> p -> x; *y = c -> p -> y; *r = c -> r;
+    *x = c->p->x; *y = c->p->y; *r = c->r;
 }
 
 /* Função atribuiC - Atribui novos valores às coordenadas de um ponto e seu raio */
 void atribuiC(Circulo* c, float x, float y, float r)
 {
-    c -> p -> x = x; c -> p -> y = y; c -> r = r;
+    c->p->x = x; c->p->y = y; c->r = r;
 }
 
 /*Função pertenceC - Retorna 1 se o ponto pertence ao circulo ou 0, caso contrário */ 
 int pertenceC(Circulo* c, Ponto* p)
 {
-    Ponto *centro = c -> p;
+    Ponto *centro = c->p;
     float dist = distanciaP(centro, p);
-    if (dist <= (*c).r) {return 1;}
+    if (dist <= c->r) {return 1;}
     return 0;
 }
 

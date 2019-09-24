@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include "ponto.h"
-//#include "circulo.h"
-//#include "triangulo.h"
+#include "circulo.h"
+#include "triangulo.h"
 
 int testeSuitePonto() {
   
@@ -44,7 +44,7 @@ int testeSuitePonto() {
   return 0;
 }
 
-/*
+
 int testeSuiteCirculo() {
   Ponto *p = criaP(1.0, 1.0);
   Circulo *c = criaC(p, 1.0);
@@ -84,7 +84,7 @@ int testeSuiteCirculo() {
   }
   return 0;
 }
-/*
+
 int testeSuiteTriangulo() {
   Ponto *p1 = criaP(0.0, 0.0);
   Ponto *p2 = criaP(1.0, 1.0);
@@ -142,7 +142,7 @@ int testeSuiteTriangulo() {
   
   return 0;
 }
-*/
+
 int main(void) {
   int n;
   printf("Executando Bateria de Testes");
@@ -153,13 +153,13 @@ int main(void) {
     return 0;
   }
   
-  /*if(testeSuiteCirculo() == 0) {
+  if(testeSuiteCirculo() == 0) {
     printf("Teste Circulo - Sucesso!");
   } else {
     printf("Teste Circulo - Fallou!");
     return 0;
   }
-  
+  /*
   if(testeSuiteTriangulo() == 0) {
     printf("Teste Circulo - Sucesso!");
   } else {
