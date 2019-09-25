@@ -98,7 +98,7 @@ int testeSuiteTriangulo() {
   }
   
   Ponto *auxP1, *auxP2, *auxP3;
-  acessaT(t,auxP1, auxP2, auxP3);
+  acessaT(t, auxP1, auxP2, auxP3);
   float distanciaP1 = distanciaP(p1, auxP1);
   float distanciaP2 = distanciaP(p2, auxP2);
   float distanciaP3 = distanciaP(p3, auxP3);

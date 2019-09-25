@@ -1,19 +1,24 @@
 #include <math.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "ponto.h"
 #include "circulo.h"
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
+
 /* Função criaC - Aloca e retorna um circulo com base no ponto e no raio informados */ 
 Circulo* criaC(Ponto* p, float raio)
 {
-    Circulo *c = (Circulo*) malloc (sizeof(Circulo)); return c;
+    Circulo *c = (Circulo*) malloc (sizeof(Circulo));
+    c->p = p;
+    c->r = raio;
+    return c;
 }
-
 
 /* Função liberaC - Libera a memória de um circulo previamente criado */ 
 void liberaC(Circulo** c)
 {
+    liberaP((*c)->p);
     free(*c);
 }
 

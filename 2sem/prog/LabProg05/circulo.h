@@ -1,19 +1,14 @@
 /* TAD: Circulo (ponto,raio) */ 
 /* Tipo exportado */
 #include "ponto.h"
-#ifndef CIRCULO_H
-#define CIRCULO_H
-
 struct circulo
 {
     Ponto *p; float r;
 };
-
 typedef struct circulo Circulo;
 
 
 /* Funções exportadas */
-
 /* Função criaC - Aloca e retorna um circulo com base no ponto e no raio informados */ 
 Circulo* criaC(Ponto* p, float raio);
 
@@ -31,4 +26,3 @@ int pertenceC(Circulo* c, Ponto* p);
 
 /* Função areaC - Retorna o cálculo da área do circulo */ 
 float areaC(Circulo* c);
-#endif
