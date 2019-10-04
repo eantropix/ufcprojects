@@ -18,12 +18,12 @@ struct Deque_ll
         left = nullptr; right = nullptr;
     }
 
-    node* addaux()
+    node* addaux()  // Auxiliar function that returns pointer to node
     {
         node *n = new(nothrow) node;
         if (n != nullptr) return n;
     }
-    bool is_empty() {return ((left == nullptr) && (right == nullptr));}
+    bool is_empty() {return ((left == nullptr) && (right == nullptr));}  //Returns true if empty
 
     bool addleft(T e)
     {
@@ -59,12 +59,12 @@ struct Deque_ll
         T e; node *n = right;
         e = (*n).element;
         if (right == nullptr) right = (*n).previous; (*right).next = nullptr;
-        delete n; return e; 
+        delete n; return e;
     }
 
     void terminate()
     {
-        while (left != nullptr && right != nullptr)
+        while (!is_empty())
         {
             remleft();
         }

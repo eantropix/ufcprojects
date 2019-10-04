@@ -4,5 +4,9 @@
 #include <new>
 void main()
 {
-    Deque_ll n = new(nothrow) Deque_ll;
+    Deque_ll<int> *n = new(nothrow) Deque_ll<int>();
+    n->init();
+    n->addright(4);
+    n->addleft(5);
+    n->addright(6);
 }
