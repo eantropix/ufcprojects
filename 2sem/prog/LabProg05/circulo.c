@@ -18,14 +18,20 @@ Circulo* criaC(Ponto* p, float raio)
 /* Função liberaC - Libera a memória de um circulo previamente criado */ 
 void liberaC(Circulo** c)
 {
-    liberaP((*c)->p);
+    //WAIT A MINUTE, THAT'S ILLEGAL
+    //printf("\n%f\n",&((*c)->p));
+    //printf("\n%f\n",&((*c)->r));
+    liberaP(&((*c)->p));
     free(*c);
+    *c = NULL;
 }
 
 /* Função acessaC - Retorna os valores das coordenadas de um circulo e seu raio */ 
 void acessaC(Circulo* c, float* x, float* y, float* r)
 {
-    *x = c->p->x; *y = c->p->y; *r = c->r;
+    *x = c->p->x; 
+    *y = c->p->y; 
+    *r = c->r;
 }
 
 /* Função atribuiC - Atribui novos valores às coordenadas de um ponto e seu raio */

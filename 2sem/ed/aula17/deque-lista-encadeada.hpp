@@ -69,5 +69,6 @@ struct Deque_ll
             remleft();
         }
     }
+    void 
 };
 #endif
