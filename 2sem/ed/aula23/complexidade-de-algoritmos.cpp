@@ -6,7 +6,7 @@ do tempo de execução da função abaixo
 double soma (double *v, int n)
 {
     double s = 0;
-    for (int i = 0; i < n; ++i) 
+    for (int i = 0; i < n; ++i)
     {
         s += v[i];
     }
@@ -73,5 +73,7 @@ Observação: Para todo "a" pertencente aos Naturais-não-nulos, a = O(1)
 
 Prova: Sejam (m = 1), (c = a) e (n >= m). Temos: 0 <= a <= c.n
 */
+
+
 
 
