@@ -1,4 +1,4 @@
-/*
+
 1. Observações sobre o método da divisão
     a) Se m = 2^p, para algum 'p' (ou seja, 'm' é uma potência de 2), então nem todos 
     os 'w' bits da chave serão usados: Só o serão os 'p' bits menos significativos
@@ -108,4 +108,3 @@
 
             -> Se 's' for escolhido aleatoriamente, então o método da multiplicação gera 
             uma coleção universal de funções de dispersão.
-*/

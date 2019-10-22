@@ -1,4 +1,3 @@
-/*
 2. Motivação
 Compare estas duas otimizações que fizemos antes:
 
@@ -17,5 +16,3 @@ Temos: 0 <= 1000 <= 1000n, pois n >= 1
 n <= c.n, pois [c >= 1]
 =>  200n <= c.n² , pois [n >= 0]
 =>  1000n <= c.n².5
-
-*/
