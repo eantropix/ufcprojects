@@ -4,7 +4,7 @@ template <typename T>
 
 struct Node 
     {
-        T element; 
+        T element;
         Node<T> *cleft, *cright;  // Child left, child right
     };
 
@@ -20,7 +20,7 @@ bool createTree (Node<T> &root)
 template <typename T>
 bool addElement (Node<T> *root, T e)  // Adds element 'e' into tree, from pointer to root.
 {
-
+    
 }
 
 template <typename T>
