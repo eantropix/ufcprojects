@@ -99,35 +99,41 @@ Painel* criaPainel()
 //     }
 // }
 
-int procuraClones(char **cidades, char* cidade)
+char** destinosUnicos(Painel* p, int n_rotas)  // Recebe painel e retorna uma lista sem repetições dos destinos
 {
-    
-}
-
-char** destinosUnicos(Painel* p, int n_rotas)
-{
-    char** cidadesUnicas[30] = (char**) malloc (sizeof(char*));
+    char** cidadesUnicas = (char**) malloc (30*sizeof(char*));
     int n_cidades = 0;
     for (int i = 0; i < n_rotas; ++i)
     {
-        int flag = 0;  // Flag diz se a cidade sendo analisada já está na lista de cidadesUnicas
-        for (int j = 0; j < n_cidades || flag > 0; ++j)
+        int flag = 0;  // Flag diz se a cidade sendo analisada já está na lista de 'cidadesUnicas'
+        for (int j = 0; j < n_cidades || flag > 0; ++j)  // Loop acaba quando chega no fim de n_cidades ou quando a flag é ativada
         {
-            if (p->rotas[i]->fim == cidadesUnicas[j])
-            {
-                ++flag;
-            }
+            if (p->rotas[i]->fim->c->nome == cidadesUnicas[j]) {++flag;}
         }
-        if (!flag) {cidadesUnicas[i] = p->rotas[i]->fim;}
+        if (!flag) {cidadesUnicas[i+1] = p->rotas[i]->fim->c->nome; ++n_cidades;} // Se a flag for 0, a cidade não está na lista, e é adicionada
     }
+    char saporra[32];
+    sprintf(saporra, "%d", n_cidades);
+    cidadesUnicas[0] = saporra;
+    return cidadesUnicas;
 }
 
-void mostraPainel(Painel* p, int n_rotas)
+void mostraDestinos(char** destinos)
 {
-    char* destinos[30] = {};
-    for (int i = 0; i < n_rotas; ++i)
+    int n_destinos = atoi(destinos[0]);
+    for (int i = 1; i < n_destinos; ++i)
     {
-
-        printf("%s / ", p->rotas[i]->fim);
+        printf("%s, ", destinos[i]);
     }
 }
+
+
+// void mostraPainel(Painel* p, int n_rotas)    
+// {
+//     char* destinos[30];
+//     for (int i = 0; i < n_rotas; ++i)
+//     {
+
+//         printf("%s / ", p->rotas[i]->fim->c->nome);
+//     }
+// }

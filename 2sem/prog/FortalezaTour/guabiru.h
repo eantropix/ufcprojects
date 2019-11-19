@@ -83,6 +83,9 @@ void atualizaPainel(Painel* p, Rota** rotas, int n_rotas);
 // Recebe as rotas e retorna uma lista com cidades únicas (sem repetições)
 char** destinosUnicos(Painel* p, int n_rotas);
 
+// Mostra os destinos retornados por 'destinosUnicos'
+void mostraDestinos(char** destinos);
+
 // Mostra todos os destinos disponíveis para viagem
 void mostraPainel(Painel* p, int n_rotas);
 

@@ -16,8 +16,8 @@ int main()
                              "Itapipoca", "Sobral", 
                              "Sta.Quiteria", "Hidrolandia"};
     
-    char *rota_arthus[4] = {"Fortaleza", "Acopiara", "Quixada", "Guaramiranga"};
-    char *rota_arthur[4] = {"Fortaleza", "Aquiraz", "Sobral", "Guaramiranga"};
+    char *rota_arthus[5] = {"Fortaleza", "Acopiara", "Quixada", "Sobral", "Guaramiranga"};
+    char *rota_arthur[5] = {"Fortaleza", "Aquiraz", "Sobral", "Pedras", "Guaramiranga"};
     char *rota_batista[5] = {"Fortaleza", "Aquiraz", "Jericoacoara", "Sta.Quiteria", "Crato"};
     char *rota_felipe[5] = {"Fortaleza", "Sobral", "Quixada", "Hidrolandia", "Pedras"};
     char *rota_cadeia[5] = {"Fortaleza", "Itapipoca", "Hidrolandia", "Sta.Quiteria", "Acopiara"};
@@ -55,5 +55,7 @@ int main()
 
     printf("-- GUABIRU VIAGENS --");
     printf("Destinos disponíveis: ");
+    char** destinos = destinosUnicos(guabi, 10);
+    mostraDestinos(destinos);
 
 }
