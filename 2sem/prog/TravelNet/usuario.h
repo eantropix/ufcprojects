@@ -8,6 +8,6 @@ struct usuario
     unsigned int id;
     char nome[40];
     
-}
-
+};
+typedef struct usuario Usuario;
 #endif
