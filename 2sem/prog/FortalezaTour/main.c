@@ -27,18 +27,33 @@ int main()
     char *rota_daniel[5] = {"Fortaleza", "Hidrolandia", "Crato", "Sobral", "Sta.Quiteria"};
     char *rota_jooj[5] = {"Fortaleza", "Hidrolandia", "Sta.Quiteria", "Sobral", "Crato"};
 
-
     Mapa *ceara = criaMapa(lista_nomes, lista_desc, 12);
 
-    Rota *arthus = criaRota(ceara, 4, rota_arthus, "16:20");
-    Rota *arthur = criaRota(ceara, 4, rota_arthur, "21:50");
-    Rota *batista = criaRota(ceara, 5, rota_batista, "18:30");
-    Rota *felipe = criaRota(ceara, 5, rota_felipe, "19:10");
-    Rota *cadeia = criaRota(ceara, 5, rota_cadeia, "13:40");
-    Rota *leal = criaRota(ceara, 5, rota_leal, "08:00");
-    Rota *tiago = criaRota(ceara, 5, rota_tiago, "11:30");
-    Rota *gabriel = criaRota(ceara, 5, rota_gabriel, "17:10");
-    Rota *daniel = criaRota(ceara, 5, rota_daniel, "21:40");
-    Rota *jooj = criaRota(ceara, 5, rota_jooj, "23:50");
-    mostraRota(arthus);
+    Painel *guabi = criaPainel();
+
+    // Rota *arthur =  criaRota(ceara, 4, rota_arthur, "21:50");
+    // Rota *arthus =  criaRota(ceara, 4, rota_arthus, "16:20");
+    // Rota *batista = criaRota(ceara, 5, rota_batista, "18:30");
+    // Rota *felipe =  criaRota(ceara, 5, rota_felipe, "19:10");
+    // Rota *cadeia =  criaRota(ceara, 5, rota_cadeia, "13:40");
+    // Rota *leal =    criaRota(ceara, 5, rota_leal, "08:00");
+    // Rota *tiago =   criaRota(ceara, 5, rota_tiago, "11:30");
+    // Rota *gabriel = criaRota(ceara, 5, rota_gabriel, "17:10");
+    // Rota *daniel =  criaRota(ceara, 5, rota_daniel, "21:40");
+    // Rota *jooj =    criaRota(ceara, 5, rota_jooj, "23:50");
+
+    guabi->rotas[0] = criaRota(ceara, 4, rota_arthus, "16:20");
+    guabi->rotas[1] = criaRota(ceara, 4, rota_arthur, "21:50");
+    guabi->rotas[2] = criaRota(ceara, 5, rota_felipe, "19:10");
+    guabi->rotas[3] = criaRota(ceara, 5, rota_batista, "18:30");
+    guabi->rotas[4] = criaRota(ceara, 5, rota_leal, "08:00");
+    guabi->rotas[5] = criaRota(ceara, 5, rota_cadeia, "13:40");
+    guabi->rotas[6] = criaRota(ceara, 5, rota_gabriel, "17:10");
+    guabi->rotas[7] = criaRota(ceara, 5, rota_tiago, "11:30");
+    guabi->rotas[8] = criaRota(ceara, 5, rota_jooj, "23:50");
+    guabi->rotas[9] = criaRota(ceara, 5, rota_daniel, "21:40");
+
+    printf("-- GUABIRU VIAGENS --");
+    printf("Destinos disponíveis: ");
+
 }

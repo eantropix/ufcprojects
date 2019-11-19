@@ -38,7 +38,8 @@ typedef struct rota Rota;
 
 struct painel
 {
-    Rota rotas[10];
+    Rota* rotas[30];
+    int n_rotas;
 };
 typedef struct painel Painel;
 
@@ -73,6 +74,16 @@ Rota* criaRota(Mapa* mapa, int tam_rota, char** cidades_rota, char horario[5]);
 void mostraRota(Rota *r);
 
 // Cria um vetor de rotas
-
 Painel* criaPainel();
+
+//Atualiza o painel (desnecessário)
+void atualizaPainel(Painel* p, Rota** rotas, int n_rotas);
+
+
+// Recebe as rotas e retorna uma lista com cidades únicas (sem repetições)
+char** destinosUnicos(Painel* p, int n_rotas);
+
+// Mostra todos os destinos disponíveis para viagem
+void mostraPainel(Painel* p, int n_rotas);
+
 #endif

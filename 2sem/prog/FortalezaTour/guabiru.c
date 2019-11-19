@@ -88,14 +88,46 @@ void mostraRota(Rota *r)
 Painel* criaPainel()
 {
     Painel* p = (Painel*) malloc (sizeof(Painel));
-
     return p;
 }
 
-void atualizaPainel(Painel* p, Rota** rotas, int n_rotas)  // TO DO
+// void atualizaPainel(Painel* p, Rota** rotas, int n_rotas)  // TO DO
+// {
+//     for (int i = 0; i < n_rotas; ++i)
+//     {
+//         p->rotas[i] = (*rotas)[i];
+//     }
+// }
+
+int procuraClones(char **cidades, char* cidade)
 {
+    
+}
+
+char** destinosUnicos(Painel* p, int n_rotas)
+{
+    char** cidadesUnicas[30] = (char**) malloc (sizeof(char*));
+    int n_cidades = 0;
     for (int i = 0; i < n_rotas; ++i)
     {
-        p->rotas[i] = rotas[i]
+        int flag = 0;  // Flag diz se a cidade sendo analisada já está na lista de cidadesUnicas
+        for (int j = 0; j < n_cidades || flag > 0; ++j)
+        {
+            if (p->rotas[i]->fim == cidadesUnicas[j])
+            {
+                ++flag;
+            }
+        }
+        if (!flag) {cidadesUnicas[i] = p->rotas[i]->fim;}
+    }
+}
+
+void mostraPainel(Painel* p, int n_rotas)
+{
+    char* destinos[30] = {};
+    for (int i = 0; i < n_rotas; ++i)
+    {
+
+        printf("%s / ", p->rotas[i]->fim);
     }
 }
