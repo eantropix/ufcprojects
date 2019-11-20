@@ -42,8 +42,8 @@ int main()
     // Rota *daniel =  criaRota(ceara, 5, rota_daniel, "21:40");
     // Rota *jooj =    criaRota(ceara, 5, rota_jooj, "23:50");
 
-    guabi->rotas[0] = criaRota(ceara, 4, rota_arthus, "16:20");
-    guabi->rotas[1] = criaRota(ceara, 4, rota_arthur, "21:50");
+    guabi->rotas[0] = criaRota(ceara, 5, rota_arthus, "16:20");
+    guabi->rotas[1] = criaRota(ceara, 5, rota_arthur, "21:50");
     guabi->rotas[2] = criaRota(ceara, 5, rota_felipe, "19:10");
     guabi->rotas[3] = criaRota(ceara, 5, rota_batista, "18:30");
     guabi->rotas[4] = criaRota(ceara, 5, rota_leal, "08:00");

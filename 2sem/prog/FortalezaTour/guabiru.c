@@ -127,7 +127,6 @@ void mostraDestinos(char** destinos)
     }
 }
 
-
 // void mostraPainel(Painel* p, int n_rotas)    
 // {
 //     char* destinos[30];
