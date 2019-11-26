@@ -108,7 +108,9 @@ char** destinosUnicos(Painel* p, int n_rotas)  // Recebe painel e retorna uma li
         int flag = 0;  // Flag diz se a cidade sendo analisada já está na lista de 'cidadesUnicas'
         for (int j = 0; j < n_cidades || flag > 0; ++j)  // Loop acaba quando chega no fim de n_cidades ou quando a flag é ativada
         {
-            if (p->rotas[i]->fim->c->nome == cidadesUnicas[j]) {++flag;}
+            char* k = *(&cidadesUnicas[j]);
+            // if (p->rotas[i]->fim->c->nome == *(cidadesUnicas[j])) {++flag;}
+            if (p->rotas[i]->fim->c->nome == k) {++flag;}
         }
         if (!flag) {cidadesUnicas[i+1] = p->rotas[i]->fim->c->nome; ++n_cidades;} // Se a flag for 0, a cidade não está na lista, e é adicionada
     }
