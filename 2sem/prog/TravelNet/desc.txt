@@ -25,4 +25,4 @@ ordem pela data da viagem;
 
 - Agendamentos não podem possuir mesmos ids e nem serem sobrepostos, isto é, não é 
 possível cadastrar um novo agendamento de viagem cujo o período total de permanência, 
-contado à partir da data da viagem, se sobreponha com um agendamento previamente cadastrado.
+contado à partir da data da viagem, se sobreponha com um agendamento previamente cadastrado. 

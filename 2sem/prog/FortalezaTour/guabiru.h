@@ -86,7 +86,22 @@ char** destinosUnicos(Painel* p, int n_rotas);
 // Mostra os destinos retornados por 'destinosUnicos'
 void mostraDestinos(char** destinos);
 
+void mostraLocais(Painel* p);
+
+// Função genérica. Printa todos os elementos de uma lista, tendo o número de elementos nessa
+void mostraLista(char* lista, int n_elementos);
+
+// Recebe o painel e só mostra os destinos possíveis (com repetições)
+void pegaUnicos(Painel* p, int n_rotas);
+
 // Mostra todos os destinos disponíveis para viagem
 void mostraPainel(Painel* p, int n_rotas);
+
+// Tendo a cidade e horário do usuário, verifica se os campos estão válidos (destino existe, hora correta, etc.)
+void testeInvalidez(Painel* p, int n_rotas, char* local, char* hora);
+
+// Escolhe a melhor rota para a cidade 'escolha_local' com o critério sendo a rota com horário mais perto do atual
+// TODO: Encontrar maneira de passar horário atual do computador para o programa.
+Rota* melhorRota(Painel* p, char* escolha_local, char* escolha_horario);
 
 #endif

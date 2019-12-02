@@ -99,42 +99,58 @@ Painel* criaPainel()
 //     }
 // }
 
-char** destinosUnicos(Painel* p, int n_rotas)  // Recebe painel e retorna uma lista sem repetições dos destinos
+void mostraLista(char* lista, int n_elementos)
 {
-    char** cidadesUnicas = (char**) malloc (30*sizeof(char*));
-    int n_cidades = 0;
-    for (int i = 0; i < n_rotas; ++i)
+    for (int i = 1; i < n_elementos; ++i)
     {
-        int flag = 0;  // Flag diz se a cidade sendo analisada já está na lista de 'cidadesUnicas'
-        for (int j = 0; j < n_cidades || flag > 0; ++j)  // Loop acaba quando chega no fim de n_cidades ou quando a flag é ativada
-        {
-            char* k = *(&cidadesUnicas[j]);
-            // if (p->rotas[i]->fim->c->nome == *(cidadesUnicas[j])) {++flag;}
-            if (p->rotas[i]->fim->c->nome == k) {++flag;}
-        }
-        if (!flag) {cidadesUnicas[i+1] = p->rotas[i]->fim->c->nome; ++n_cidades;} // Se a flag for 0, a cidade não está na lista, e é adicionada
+        printf("%s - ", lista[i]);
     }
-    char saporra[32];
-    sprintf(saporra, "%d", n_cidades);
-    cidadesUnicas[0] = saporra;
-    return cidadesUnicas;
+    
 }
 
-void mostraDestinos(char** destinos)
+void mostraLocais(Painel* p)
 {
-    int n_destinos = atoi(destinos[0]);
-    for (int i = 1; i < n_destinos; ++i)
+    int n = p->n_rotas; // Salvando dado em variável para evitar múltiplos acessos (Eficiência??)
+    for (int i = 0; i < n; ++i)
     {
-        printf("%s, ", destinos[i]);
+        char *temp = p->rotas[i]->fim->c->nome;
+        printf("%s - ", temp);
     }
+    printf("\n");
 }
 
-// void mostraPainel(Painel* p, int n_rotas)    
+// void pegaUnicos(Painel* p, int n_rotas) // Segunda tentativa de mostrar destinos únicos. Falhou (PONTEIRO É UM SACO)
 // {
-//     char* destinos[30];
+//     int n_cidades = 0;
+//     char* unicasCidades = (char*) malloc (n_rotas*sizeof(char));
+//     if (unicasCidades == NULL) {printf("Malocou falhou");}
 //     for (int i = 0; i < n_rotas; ++i)
 //     {
-
-//         printf("%s / ", p->rotas[i]->fim->c->nome);
+//         int flag = 0; // Flag alerta se a cidade sendo analisada já está na lista 'unicasCidades'
+//         char *temp = p->rotas[i]->fim->c->nome;
+//         for (int j = 0; j < i; ++j)
+//         {
+//             if (*temp == unicasCidades[j]) {++flag;}
+//         }
+//         if (!flag) {unicasCidades[i+1] = temp; ++n_cidades;} // Se a cidade não está na lista, deve ser adicionada
 //     }
+//     mostraLista(unicasCidades, n_cidades);
 // }
+
+// Tendo a cidade e horário do usuário, verifica se os campos estão válidos (destino existe, hora correta, etc.)
+void testeInvalidez(Painel* p, int n_rotas, char* local, char* hora);
+
+// Escolhe a melhor rota para a cidade 'escolha_local' com o critério sendo a rota com horário mais perto do atual
+// TODO: Encontrar maneira de passar horário atual do computador para o programa.
+Rota* melhorRota(Painel* p, char* escolha_local, char* escolha_horario)
+{
+    int n = p->n_rotas;
+    Rota** rotasPossiveis = (Rota*) malloc (n*sizeof(Rota));
+    for (int i = 0; i < n; ++i)
+    {
+        if (escolha_local == &(p->rotas[i]->fim->c->nome))
+        {
+            rotasPossiveis[i] = p->rotas[i];
+        }
+    }
+}
