@@ -21,16 +21,16 @@ struct mapa  // Mapa possui uma lista de cidades.
 typedef struct mapa Mapa;
 struct parada  // Parada será utilizada para construir as rotas.
 {
-    Cidade *c;
-    struct parada *prox_p;
-    struct parada *ant_p;
+    Cidade* c;
+    struct parada* prox_p;
+    struct parada* ant_p;
 };
 typedef struct parada Parada;
 
 struct rota  // Rota tem as paradas inicial, final e a hora de chegada.
 {
-    Parada *inicio;
-    Parada *fim;
+    Parada* inicio;
+    Parada* fim;
     int tam_rota;
     char hora_chegada[5];
 };
@@ -100,8 +100,8 @@ void mostraPainel(Painel* p, int n_rotas);
 // Tendo a cidade e horário do usuário, verifica se os campos estão válidos (destino existe, hora correta, etc.)
 void testeInvalidez(Painel* p, int n_rotas, char* local, char* hora);
 
-// Escolhe a melhor rota para a cidade 'escolha_local' com o critério sendo a rota com horário mais perto do atual
+// Escolhe a melhor rota do painel com o critério sendo a rota com horário mais perto do especificado
 // TODO: Encontrar maneira de passar horário atual do computador para o programa.
-Rota* melhorRota(Painel* p, char* escolha_local, char* escolha_horario);
+Rota* melhorRota(Painel* p, char* escolha_horario);
 
 #endif

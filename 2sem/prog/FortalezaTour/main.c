@@ -66,9 +66,15 @@ int main()
     scanf(" %s", escolha_local);
     printf("Que horas quer ir? ");
     scanf(" %s", escolha_horario);
-    Rota* rota_top = melhorRota(guabi, escolha_local, escolha_horario);
-    printf("Encontramos uma rota pra você!\n");
-    printf("Destino: %s", rota_top->fim->c->nome);
-    printf("Horário: %s", rota_top->hora_chegada);
+
+
+
+    Painel* rotas_da_vez = criaPainel();
+    rotas_da_vez = adicionaDestinos(guabi, escolha_local);
+    // Rota* rota_top = melhorRota(rotas_da_vez, escolha_horario);
+    // printf("Destino: %s", rota_top->fim->c->nome);
+    // printf("Horário: %s", rota_top->hora_chegada);
+    printf("Encontramos as seguintes rotas para você!\n");
+    mostraLocais(rotas_da_vez);
 
 }

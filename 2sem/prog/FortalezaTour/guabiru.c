@@ -140,17 +140,24 @@ void mostraLocais(Painel* p)
 // Tendo a cidade e horário do usuário, verifica se os campos estão válidos (destino existe, hora correta, etc.)
 void testeInvalidez(Painel* p, int n_rotas, char* local, char* hora);
 
-// Escolhe a melhor rota para a cidade 'escolha_local' com o critério sendo a rota com horário mais perto do atual
-// TODO: Encontrar maneira de passar horário atual do computador para o programa.
-Rota* melhorRota(Painel* p, char* escolha_local, char* escolha_horario)
+
+// Cria um painel secundário a partir do primeiro, somente com as rotas desejadas pelo usuário
+Painel* adicionaDestinos(Painel* p, char* local)
 {
-    int n = p->n_rotas;
-    Rota** rotasPossiveis = (Rota*) malloc (n*sizeof(Rota));
-    for (int i = 0; i < n; ++i)
+    Painel* novo;
+    novo->n_rotas = 0;
+    int n_rotas = p->n_rotas;
+    for (int i = 0; i < n_rotas; ++i)
     {
-        if (escolha_local == &(p->rotas[i]->fim->c->nome))
+        char* cidade_p = p->rotas[i]->fim->c->nome;
+        if (strcmp(cidade_p, local) == 0)  //Se a cidade do painel é a que o usuário quer:
         {
-            rotasPossiveis[i] = p->rotas[i];
+            novo->rotas[n_rotas] = p->rotas[i];
+            ++n_rotas;
         }
     }
+    return novo;
 }
+
+// Escolhe a melhor rota para o usuário (com horário mais próximo àquele que o usuário quer)
+Rota* melhorRota(Painel* p, char* escolha_horario);
