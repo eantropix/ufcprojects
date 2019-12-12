@@ -1,4 +1,5 @@
 #include "guabiru.h"
+
 int main()
 {
     // Declarando variáveis
@@ -30,28 +31,16 @@ int main()
     Mapa *ceara = criaMapa(lista_nomes, lista_desc, 12);
 
     Painel *guabi = criaPainel();
-
-    // Rota *arthur =  criaRota(ceara, 4, rota_arthur, "21:50");
-    // Rota *arthus =  criaRota(ceara, 4, rota_arthus, "16:20");
-    // Rota *batista = criaRota(ceara, 5, rota_batista, "18:30");
-    // Rota *felipe =  criaRota(ceara, 5, rota_felipe, "19:10");
-    // Rota *cadeia =  criaRota(ceara, 5, rota_cadeia, "13:40");
-    // Rota *leal =    criaRota(ceara, 5, rota_leal, "08:00");
-    // Rota *tiago =   criaRota(ceara, 5, rota_tiago, "11:30");
-    // Rota *gabriel = criaRota(ceara, 5, rota_gabriel, "17:10");
-    // Rota *daniel =  criaRota(ceara, 5, rota_daniel, "21:40");
-    // Rota *jooj =    criaRota(ceara, 5, rota_jooj, "23:50");
-
-    guabi->rotas[0] = criaRota(ceara, 5, rota_arthus, "16:20");
-    guabi->rotas[1] = criaRota(ceara, 5, rota_arthur, "21:50");
-    guabi->rotas[2] = criaRota(ceara, 5, rota_felipe, "19:10");
-    guabi->rotas[3] = criaRota(ceara, 5, rota_batista, "18:30");
-    guabi->rotas[4] = criaRota(ceara, 5, rota_leal, "08:00");
-    guabi->rotas[5] = criaRota(ceara, 5, rota_cadeia, "13:40");
-    guabi->rotas[6] = criaRota(ceara, 5, rota_gabriel, "17:10");
-    guabi->rotas[7] = criaRota(ceara, 5, rota_tiago, "11:30");
-    guabi->rotas[8] = criaRota(ceara, 5, rota_jooj, "23:50");
-    guabi->rotas[9] = criaRota(ceara, 5, rota_daniel, "21:40");
+    guabi->rotas[0] = criaRota(ceara, 5, rota_arthus,  16, 20);
+    guabi->rotas[1] = criaRota(ceara, 5, rota_arthur,  21, 50);
+    guabi->rotas[2] = criaRota(ceara, 5, rota_felipe,  19, 10);
+    guabi->rotas[3] = criaRota(ceara, 5, rota_batista, 18, 30);
+    guabi->rotas[4] = criaRota(ceara, 5, rota_leal,     8, 00);
+    guabi->rotas[5] = criaRota(ceara, 5, rota_cadeia,  13, 40);
+    guabi->rotas[6] = criaRota(ceara, 5, rota_gabriel, 17, 10);
+    guabi->rotas[7] = criaRota(ceara, 5, rota_tiago,   11, 30);
+    guabi->rotas[8] = criaRota(ceara, 5, rota_jooj,    23, 50);
+    guabi->rotas[9] = criaRota(ceara, 5, rota_daniel,  21, 40);
     guabi->n_rotas = 10;
 
     printf("-- GUABIRU VIAGENS --\n");
@@ -60,21 +49,27 @@ int main()
     // mostraDestinos(destinos);
     // pegaUnicos(guabi, 10);  // Ainda é um saco pegar só os não repetidos. TODO: Procurar uma função em C que faça isso.
     mostraLocais(guabi);
-    char* escolha_local;
-    char* escolha_horario;
+    char* escolha_local = (char*) malloc (100*sizeof(char));
+    int hr; int min;
     printf("Para onde quer ir? \n");
     scanf(" %s", escolha_local);
-    printf("Que horas quer ir? ");
-    scanf(" %s", escolha_horario);
-
-
+    printf("Que horas quer chegar? ");
+    scanf("%d:%d", &hr, &min);
+    printf("Local: %s\n", escolha_local);
+    printf("Hora: %d:%d\n", hr, min);
 
     Painel* rotas_da_vez = criaPainel();
-    rotas_da_vez = adicionaDestinos(guabi, escolha_local);
-    // Rota* rota_top = melhorRota(rotas_da_vez, escolha_horario);
+    adicionaDestinos(guabi, escolha_local, rotas_da_vez);
     // printf("Destino: %s", rota_top->fim->c->nome);
     // printf("Horário: %s", rota_top->hora_chegada);
-    printf("Encontramos as seguintes rotas para você!\n");
-    mostraLocais(rotas_da_vez);
-
+    // mostraLocais(rotas_da_vez);
+    Rota* rota_top = melhorRota(rotas_da_vez, hr, min);
+    printf("A nossa melhor rota para você é: \n");
+    printf("Destino: %s\n", rota_top->fim->c->nome);
+    printf("Horario: %d:%d\n", rota_top->hora, rota_top->minuto);
+    printf("Vamos embarcar? (s/n)\n");
+    char partiu;
+    scanf(" %c", &partiu);
+    // if (partiu == 's') {viajando(rota_top);}
+    // else {printf("Até logo!");}
 }

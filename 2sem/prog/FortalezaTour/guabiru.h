@@ -32,7 +32,8 @@ struct rota  // Rota tem as paradas inicial, final e a hora de chegada.
     Parada* inicio;
     Parada* fim;
     int tam_rota;
-    char hora_chegada[5];
+    int hora;
+    int minuto;
 };
 typedef struct rota Rota;
 
@@ -68,7 +69,7 @@ void mostraParada(Parada* p);
 Mapa* criaMapa(char** lista_nomes, char** lista_descricoes, int n_cidades);
 
 //Cria uma rota com n cidades
-Rota* criaRota(Mapa* mapa, int tam_rota, char** cidades_rota, char horario[5]);
+Rota* criaRota(Mapa* mapa, int tam_rota, char** cidades_rota, int hora_chegada, int minuto_chegada);
 
 // Mostra as cidades de uma rota
 void mostraRota(Rota *r);
@@ -89,7 +90,7 @@ void mostraDestinos(char** destinos);
 void mostraLocais(Painel* p);
 
 // Função genérica. Printa todos os elementos de uma lista, tendo o número de elementos nessa
-void mostraLista(char* lista, int n_elementos);
+void mostraLista(char** lista, int n_elementos);
 
 // Recebe o painel e só mostra os destinos possíveis (com repetições)
 void pegaUnicos(Painel* p, int n_rotas);
@@ -102,6 +103,8 @@ void testeInvalidez(Painel* p, int n_rotas, char* local, char* hora);
 
 // Escolhe a melhor rota do painel com o critério sendo a rota com horário mais perto do especificado
 // TODO: Encontrar maneira de passar horário atual do computador para o programa.
-Rota* melhorRota(Painel* p, char* escolha_horario);
+Rota* melhorRota(Painel* p, int hr, int min);
+
+void adicionaDestinos(Painel* p, char* local, Painel* novo);
 
 #endif

@@ -1,6 +1,6 @@
 #include "guabiru.h"
 
-Cidade* criaCidade(char *nome, char *desc)
+Cidade* criaCidade(char* nome, char* desc)
 {
     Cidade* c = (Cidade*) malloc (sizeof(Cidade));
     strcpy(c->nome, nome);
@@ -54,10 +54,11 @@ Mapa* criaMapa(char** lista_nomes, char** lista_descricoes, int n_cidades)
     return m;
 }
 
-Rota* criaRota(Mapa* mapa, int tam_rota, char** cidades_rota, char horario[5]) 
+Rota* criaRota(Mapa* mapa, int tam_rota, char** cidades_rota, int hora_chegada, int minuto_chegada) 
 {  //Pré-condição: Todas as cidades de 'cidades_rota' existem dentro de 'mapa'
     Rota* r = (Rota*) malloc(sizeof(Rota));
-    strcpy(r->hora_chegada, horario);  // Passa 
+    r->hora = hora_chegada;
+    r->minuto =  minuto_chegada;
     r->tam_rota = tam_rota;
     Parada *primeiro = criaParada(NULL,buscaCidade(mapa, cidades_rota[0]),NULL);
     Parada *atual, *ant; 
@@ -88,18 +89,11 @@ void mostraRota(Rota *r)
 Painel* criaPainel()
 {
     Painel* p = (Painel*) malloc (sizeof(Painel));
+    p->n_rotas = 0;
     return p;
 }
 
-// void atualizaPainel(Painel* p, Rota** rotas, int n_rotas)  // TO DO
-// {
-//     for (int i = 0; i < n_rotas; ++i)
-//     {
-//         p->rotas[i] = (*rotas)[i];
-//     }
-// }
-
-void mostraLista(char* lista, int n_elementos)
+void mostraLista(char** lista, int n_elementos)
 {
     for (int i = 1; i < n_elementos; ++i)
     {
@@ -110,54 +104,56 @@ void mostraLista(char* lista, int n_elementos)
 
 void mostraLocais(Painel* p)
 {
-    int n = p->n_rotas; // Salvando dado em variável para evitar múltiplos acessos (Eficiência??)
+    int n = p->n_rotas;
+    printf("%d rotas\n", n);
     for (int i = 0; i < n; ++i)
     {
-        char *temp = p->rotas[i]->fim->c->nome;
-        printf("%s - ", temp);
+        printf("%s - ", p->rotas[i]->fim->c->nome);
     }
     printf("\n");
 }
 
-// void pegaUnicos(Painel* p, int n_rotas) // Segunda tentativa de mostrar destinos únicos. Falhou (PONTEIRO É UM SACO)
-// {
-//     int n_cidades = 0;
-//     char* unicasCidades = (char*) malloc (n_rotas*sizeof(char));
-//     if (unicasCidades == NULL) {printf("Malocou falhou");}
-//     for (int i = 0; i < n_rotas; ++i)
-//     {
-//         int flag = 0; // Flag alerta se a cidade sendo analisada já está na lista 'unicasCidades'
-//         char *temp = p->rotas[i]->fim->c->nome;
-//         for (int j = 0; j < i; ++j)
-//         {
-//             if (*temp == unicasCidades[j]) {++flag;}
-//         }
-//         if (!flag) {unicasCidades[i+1] = temp; ++n_cidades;} // Se a cidade não está na lista, deve ser adicionada
-//     }
-//     mostraLista(unicasCidades, n_cidades);
-// }
 
 // Tendo a cidade e horário do usuário, verifica se os campos estão válidos (destino existe, hora correta, etc.)
 void testeInvalidez(Painel* p, int n_rotas, char* local, char* hora);
 
 
 // Cria um painel secundário a partir do primeiro, somente com as rotas desejadas pelo usuário
-Painel* adicionaDestinos(Painel* p, char* local)
+void adicionaDestinos(Painel* p, char* local, Painel* novo)
 {
-    Painel* novo;
-    novo->n_rotas = 0;
+    //Painel* novo = (Painel*) malloc (sizeof(Painel));
+    // novo->n_rotas = 0;
     int n_rotas = p->n_rotas;
     for (int i = 0; i < n_rotas; ++i)
     {
-        char* cidade_p = p->rotas[i]->fim->c->nome;
+        char cidade_p[100];
+        strcpy(cidade_p, p->rotas[i]->fim->c->nome);
         if (strcmp(cidade_p, local) == 0)  //Se a cidade do painel é a que o usuário quer:
         {
-            novo->rotas[n_rotas] = p->rotas[i];
-            ++n_rotas;
+            novo->rotas[novo->n_rotas++] = p->rotas[i];
         }
     }
-    return novo;
+    if (novo->rotas[n_rotas - 1] == NULL) {printf("perdemo");}
 }
 
 // Escolhe a melhor rota para o usuário (com horário mais próximo àquele que o usuário quer)
-Rota* melhorRota(Painel* p, char* escolha_horario);
+Rota* melhorRota(Painel* p, int hr, int min)
+{
+    int husuario = (60*hr + min);  // Horario do usuario convertido em minutos
+    int distancia_atual = 0;  // Distancia em minutos entre o usuario e a rota
+    int distancia_melhor = 32767;  // Melhor distancia, inicializada com valor absurdo
+    Rota* topissima = (Rota*) malloc (sizeof(Rota)); // Inicialmente, a melhor rota é a prieira
+    for (int i = 0; i < (p->n_rotas); ++i)
+    {
+        distancia_atual = (60*p->rotas[i]->hora) + (p->rotas[i]->minuto);
+        if ((distancia_atual - husuario) < 0)  // Se hora da rota for antes da hora do usuario
+        {
+            distancia_atual = ((1440 - (husuario - distancia_atual)));  // Rota só está disponível no próximo dia
+        }
+        if (distancia_atual < distancia_melhor)  // Se rota atual é mais perto que a "melhor" rota
+        {
+            topissima = p->rotas[i];  // Atual vira nova melhor
+        }
+    }
+    return topissima;
+}
