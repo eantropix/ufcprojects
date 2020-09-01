@@ -51,9 +51,9 @@ def fslash(qrow, qcolumn):
 			if board[buffer_row][buffer_column] == 1:  # Se tiver peca na coordenada atual:
 				board[buffer_row][buffer_column] = 3
 				count += 1  # Aumenta o contador
+
 	flag = True  # Reseta flag
 	buffer_row = qrow; buffer_column = qcolumn;  # Repassa coordenadas, reseta buffers
-
 	while flag:  # Loop que segue para a esquerda da rainha, descendo
 		if (buffer_row == 7) or (buffer_column == 0):
 			flag = False
@@ -111,8 +111,8 @@ targets(pecas)
 print("Peças colocadas! Agora, tente matar o máximo possível colocando uma rainha no tabuleiro!")
 show_board()
 
-allowed_pos = 0
-while allowed_pos == 0:
+allowed_pos = False
+while !allowed_pos:
 	qrow = int(input("Digite a linha desejada! (1 a 8)"))
 	qrow -= 1
 	qcolumn = int(input("Digite a coluna desejada! (1 a 8)"))
@@ -122,7 +122,7 @@ while allowed_pos == 0:
 	else:
 		print("Pois bem, vamos começar!")
 		board[qrow][qcolumn] = 2
-		allowed_pos = 1
+		allowed_pos = True
 
 show_board()
 queen(qrow, qcolumn)
