@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="349a8b4a-85c9-4002-8564-238753e3ee79" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao1/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao10/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao10/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao10/Pessoa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao10/Pessoa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao11/Conjunto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao12/Conjunto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao12/Conjunto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao12/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao12/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao15/Conjunto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao15/Conjunto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao15/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao15/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao2/Questao2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao3/Pessoa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao4/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao5/Pessoa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao6/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao7/Pessoa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao8/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Questao9/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trabalho2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/CK_0235_TRAB_03.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Desafio3/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao1/Figura.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao1/Main1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao1/Ponto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/Conta$TipoConta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/Conta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/Conta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/ContaBasic$ContaExtreme.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/ContaBasic$ContaPlus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/ContaBasic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/ContaBasic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/ContaExtreme.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/ContaExtreme.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/ContaPlus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/ContaPlus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/Sistema.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao2/Sistema.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao3/CountWords.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao3/CountWords.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao3/WordFrequency.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao3/WordFrequency.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao3/WordFrequency2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao3/WordFrequency2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao3/WordFrequency3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao3/WordFrequency3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao4/Brasil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao4/Brasil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao4/Teste_Hash.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao4/Teste_Hash.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao4/Teste_Hash2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho3/Questao4/Teste_Hash2.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1hFevMXsp1wulNGGNdemcnlpg4H" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Questao15" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Questao15" />
+      <recent name="$PROJECT_DIR$/Questao12" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="349a8b4a-85c9-4002-8564-238753e3ee79" name="Default Changelist" comment="" />
+      <created>1599611498376</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599611498376</updated>
+      <workItem from="1599611499862" duration="1165000" />
+      <workItem from="1599653842842" duration="7259000" />
+      <workItem from="1599934061197" duration="30000" />
+      <workItem from="1599934128192" duration="689000" />
+      <workItem from="1600868988987" duration="191000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="454" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599611945958">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="454" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1599611945958" />
+    <state x="732" y="406" width="518" height="301" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1599660760040">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="732" y="406" width="518" height="301" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/72.27.1848.1053@72.27.1848.1053" timestamp="1599660760040" />
+    <state x="1120" y="193" width="424" height="491" key="FileChooserDialogImpl" timestamp="1600869172666">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="1120" y="193" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1600869172666" />
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1599654913124">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1599654913124" />
+    <state x="777" y="468" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599656697619">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="777" y="468" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/72.27.1848.1053@72.27.1848.1053" timestamp="1599656697619" />
+    <state x="590" y="155" width="802" height="803" key="new project wizard" timestamp="1600869177691">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="590" y="155" width="802" height="803" key="new project wizard/72.27.1848.1053@72.27.1848.1053" timestamp="1600869177691" />
+  </component>
+</project>
