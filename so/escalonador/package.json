@@ -1,0 +1,26 @@
+{
+  "name": "cpu-process-scheduler",
+  "version": "1.0.0",
+  "description": "Simulador de Escalonamento de Processos (SO - UFC)",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "node src/index.ts",
+    "test": "node src/test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "cpu-scheduling",
+    "so",
+    "ufc",
+    "fcfs",
+    "sjf",
+    "srtf"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "typescript": "^7.0.2"
+  }
+}
