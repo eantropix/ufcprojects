@@ -1,0 +1,28 @@
+{
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 800,
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.recipe.default": "first",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "tectonic",
+      "command": "tectonic",
+      "args": [
+        "-X",
+        "compile",
+        "--synctex",
+        "--keep-intermediates",
+        "%DOCFILE%.tex"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "Tectonic",
+      "tools": [
+        "tectonic"
+      ]
+    }
+  ],
+  "latex-workshop.view.pdf.viewer": "tab"
+}

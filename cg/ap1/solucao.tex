@@ -1,0 +1,99 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{booktabs}
+\geometry{margin=2.5cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.25em}
+
+\title{Computação Gráfica - AP1}
+\author{470788 - Arthur Santos Viana de Oliveira}
+\date{19/10/2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Valor de \(k\) e ponto observado}
+
+Com os dados \(A=4\), \(B=7\), \(C=0\), \(D=7\), \(E=8\) e \(F=8\), obtém-se
+\begin{align*}
+  k &= (300+A+B+C+D+E+F)\bmod 10 \\
+    &= (300+4+7+0+7+8+8)\bmod 10 \\
+    &= 334\bmod 10 \\
+    &= 4.
+\end{align*}
+Assim, \(\alpha=1+(k\bmod 4)=1\), e o ponto observado é \(P_{at}=C_\alpha=C_1\). Para \(k=4\), o centro da base é \(C_1=(100-k,0,200+k)=(96,0,204)\), enquanto o observador está em \(P_e=(0+60k,\,100+20k,\,600-60k)=(240,180,360)\). Assim, a direção do raio que parte do observador e passa pelo ponto observado é \(\vec d=P_{at}-P_e=(-144,-180,-156)\).
+
+\section{Interseção do raio com o objeto}
+
+O objeto \(\alpha=1\) é o anel cilíndrico com centro da base em \(C_1=(96,0,204)\), raio \(R_1=10+k=14\), altura \(H_1=5+20k=85\) e direção \(\vec D_1=(|k|,|k-1|,|k-4|)=(4,3,0)\). Portanto, o versor do eixo é \(\hat a=(4,3,0)/5=(0.8,0.6,0)\).
+
+Parametrizando o raio por \(P(t)=P_e+t\vec d\) e definindo \(\vec w=P_e-C_1=(144,180,156)\), a componente de \(\vec w\) perpendicular ao eixo é dada por
+\[
+  \vec w_\perp=\vec w-(\vec w\cdot\hat a)\hat a.
+\]
+Como \(\vec w\cdot\hat a=0.8(144)+0.6(180)=223.2\), temos que
+\begin{align*}
+  \vec w_\perp &= (144,180,156)-223.2(0.8,0.6,0) \\
+                &= (-34.56,46.08,156), \\
+  |\vec w_\perp| &= \sqrt{(-34.56)^2+46.08^2+156^2}\approx166.2942.
+\end{align*}
+Na lateral do cilindro, \((1-t)|\vec w_\perp|=R_1=14\). Logo, \(1-t=14/166.2942\approx0.084188\) e \(t\approx0.915812\). A coordenada axial nesse ponto é \(s=(\vec w\cdot\hat a)(1-t)=223.2(0.084188)\approx18.79\), valor entre \(0\) e \(H_1=85\); portanto, o raio atinge a lateral do cilindro.
+
+O ponto de interseção é \(P=P_e+t\vec d\approx(108.123,\,15.154,\,217.133)\). A normal unitária, orientada para fora do eixo do cilindro, vale
+\[
+  \hat n=\frac{P-(C_1+s\hat a)}{R_1}
+  \approx(-0.20783,\,0.27710,\,0.93809).
+\]
+
+\section{Vetores para a luz e para o observador}
+
+A fonte de luz está em \(P_f=(300,300,1000)\). Do ponto iluminado até a fonte, tem-se \(\vec L=P_f-P\approx(191.877,\,284.846,\,782.867)\) e \(\hat L\approx(0.22445,\,0.33320,\,0.91575)\). Na direção do observador, \(\vec V=P_e-P\approx(131.877,\,164.846,\,142.867)\) e \(\hat V\approx(0.51736,\,0.64670,\,0.56047)\). Com isso, encontramos os produtos escalares \(\hat n\cdot\hat L\approx0.90474\) e \(\hat n\cdot\hat V\approx0.59745\).
+
+\section{Iluminação (No modelo do Phong)}
+
+A energia que chega ao olho é calculada por
+\[
+  \begin{aligned}
+    E_e &= I_a k_a \\
+        &\quad{}+ I_f k_d\max(\hat n\cdot\hat L,0) \\
+        &\quad{}+ I_f k_s\left[\max(\hat R\cdot\hat V,0)\right]^e,
+  \end{aligned}
+\]
+em que \(\hat R=2(\hat n\cdot\hat L)\hat n-\hat L\) é o vetor de reflexão.
+
+Neste caso, \(\hat R\approx(-0.60051,\,0.16821,\,0.78171)\) e \(\hat R\cdot\hat V\approx0.23623\). Com o coeficiente de polimento \(e=3\), a parcela especular usa
+\[
+  \begin{aligned}
+    (\hat R\cdot\hat V)^e &\approx (0.23623)^3 \\
+                            &\approx 0.01318.
+  \end{aligned}
+\]
+
+Já foram dadas as propriedades do material \(k_a=k_d=k_s=(0.5,\,0.25,\,0.5)\), a luz ambiente \(I_a=(0.5,\,0.5,\,0.5)\) e a intensidade da fonte \(I_f=(1,1,1)\). Com isso, temos todos os elementos para calcular as componentes.
+
+\subsection{Componentes da iluminação}
+Substituindo os valores, as componentes ambiente, difusa e especular são, respectivamente:
+\begin{align*}
+  E_a &= I_a k_a=(0.5,0.5,0.5)(0.5,0.25,0.5)=(0.25,\,0.125,\,0.25), \\
+  E_d &= I_f k_d(\hat n\cdot\hat L)=(0.5,\,0.25,\,0.5)(0.90474)
+       \approx(0.45237,\,0.22619,\,0.45237), \\
+  E_s &= I_f k_s(\hat R\cdot\hat V)^3=(0.5,\,0.25,\,0.5)(0.01318)
+       \approx(0.00659,\,0.00330,\,0.00659).
+\end{align*}
+
+\section{Resultado final}
+
+Por fim, para conseguir a energia que chega ao olho somamos as componentes e obtemos:
+\[
+  \boxed{E_e=E_a+E_d+E_s\approx(0.70896,\,0.35448,\,0.70896)}.
+\]
+
+\medskip
+\noindent
+
+\end{document}
